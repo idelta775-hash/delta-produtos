@@ -1,0 +1,21 @@
+# DELTA Studio: Render Blueprint for official commercial-friendly static hosting.
+# Public portfolio + demo tools only. No payment processing or buyer ZIPs.
+services:
+  - type: web
+    name: delta-studio
+    runtime: static
+    repo: https://github.com/idelta775-hash/delta-produtos
+    branch: main
+    buildCommand: sh render-build.sh
+    staticPublishPath: ./render-dist
+    autoDeployTrigger: off
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
