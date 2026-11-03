@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://idelta775-hash.github.io/delta-produtos/sitemap.xml

@@ -1,0 +1,11 @@
+*.zip
+*.pdf
+*.log
+*.json
+*.sqlite*
+*.db
+.env*
+*.secret*
+*token*
+__pycache__/
+TEST_*
