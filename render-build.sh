@@ -8,10 +8,10 @@ TARGET_BASE="${RENDER_EXTERNAL_URL%/}/"
 OUT="./render-dist"
 rm -rf "$OUT"
 mkdir -p "$OUT/assets"
-for name in index.html precificador.html celebre-junto.html calculadora-roi-gratis.html amostra-etiqueta-gratis.html guia-precificacao-automacao.html guia-festa-imprimivel.html; do
+for name in index.html precificador.html celebre-junto.html conversa-pro.html conversa-demo-gratis.html calculadora-roi-gratis.html amostra-etiqueta-gratis.html guia-precificacao-automacao.html guia-festa-imprimivel.html; do
   cp "$name" "$OUT/$name"
 done
-for name in style.css roi-gratis.js robots.txt sitemap.xml; do
+for name in style.css roi-gratis.js conversa-demo.js robots.txt sitemap.xml; do
   cp "$name" "$OUT/$name"
 done
 for image in assets/*.jpg; do

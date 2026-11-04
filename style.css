@@ -99,3 +99,7 @@ footer p{color:#b8d6cc;font-size:13px;line-height:1.7}
  body.print-free .free-gift-tag{break-inside:avoid}
  @page{size:A4;margin:12mm}
 }
+
+/* Product-specific marketing gallery: preview crops instead of towering mobile screenshots. */
+.conversa-page .gallery img{height:315px;object-fit:cover;object-position:top}
+@media(max-width:700px){.conversa-page .gallery img{height:215px}}
