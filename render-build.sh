@@ -24,6 +24,7 @@ cp "assets/conversa-pro-reel.mp4" "$OUT/assets/"
 cp "assets/conversa-pro-reel-pt.vtt" "$OUT/assets/"
 cp "assets/reels-barber-demo.mp4" "$OUT/assets/"
 cp "assets/reels-barber-demo.jpg" "$OUT/assets/"
+cp "assets/delta-reels-barber-amostra-gratis.zip" "$OUT/assets/"
 
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
