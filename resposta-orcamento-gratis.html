@@ -1,0 +1,88 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerador de resposta para orçamento grátis | DELTA Studio</title>
+<meta name="description" content="Crie respostas para pedidos de orçamento e atendimento em minutos. Ferramenta gratuita para prestadores de serviço, sem cadastro e sem disparos automáticos.">
+<link rel="canonical" href="https://idelta775-hash.github.io/delta-produtos/resposta-orcamento-gratis.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Gerador gratuito de resposta para orçamento">
+<meta property="og:description" content="Modelos de resposta para prestadores de serviço: personalize, revise e copie manualmente.">
+<meta property="og:url" content="https://idelta775-hash.github.io/delta-produtos/resposta-orcamento-gratis.html">
+<meta property="og:image" content="https://idelta775-hash.github.io/delta-produtos/assets/conversa-capa.jpg">
+<meta name="theme-color" content="#153d38"><link rel="stylesheet" href="style.css">
+<style>
+.form-hero{padding:65px 0 40px;background:radial-gradient(circle at 85% 15%,#b7dbc5 0,transparent 33%),#f7f7f1}
+.form-hero h1{font-size:clamp(40px,5vw,68px)}
+.workspace{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.workspace .panel{border:1px solid #c6dacc;border-radius:21px;background:#fffdf8;padding:28px;box-shadow:0 12px 26px #12392e11}
+.workspace .panel h2{font-size:27px}
+.workspace label{display:grid;gap:6px;margin:13px 0;font-weight:750;font-size:13px;color:#35564c}
+.workspace input,.workspace select,.workspace textarea{width:100%;border:1px solid #abc3b3;border-radius:10px;font:500 16px system-ui;padding:12px;min-height:45px;background:white;color:#153a33}
+.workspace textarea{min-height:88px;resize:vertical}
+.workspace :is(input,select,textarea):focus-visible{outline:3px solid #b5d9c4;outline-offset:2px}
+.workspace button{margin:5px 6px 5px 0;border:0;border-radius:10px;background:#195548;color:white;padding:13px 18px;cursor:pointer;font-size:14px;font-weight:800}
+.workspace button:disabled{opacity:.5;cursor:default}
+.workspace button.secondary{border:1px solid #afcaba;background:#e4eee4;color:#1b5147}
+#preview{border:1px solid #b5d1bd;background:#ebf4ee;border-radius:15px;padding:22px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;min-height:250px}
+.tool-hint{font-size:13px;color:#5e776d;line-height:1.65}
+.cta-wide{padding:30px;background:#153d38;color:#fff;border-radius:20px;margin-top:28px}
+.cta-wide h2{color:#fff}.cta-wide p{color:#d0e4d9}.cta-wide .action{background:#dfc39a;color:#173d36}
+@media(max-width:800px){.workspace{grid-template-columns:1fr}}
+@media(max-width:700px){.form-hero{padding:40px 0 25px}.workspace .panel{padding:19px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Gerador gratuito de resposta para orçamento DELTA","operatingSystem":"Web","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://idelta775-hash.github.io/delta-produtos/resposta-orcamento-gratis.html"}</script>
+</head><body>
+<header class="top"><nav class="nav" aria-label="Menu principal"><a class="logo" href="index.html">DELTA<span>.</span> STUDIO</a><div class="links"><a href="sistemas.html">Softwares</a><a href="conversa-pro.html">Conversa PRO</a><a href="index.html#sobre">Sobre</a></div></nav></header>
+<main><section class="form-hero"><div class="wrap"><span class="kicker">FERRAMENTA GRATUITA • PRESTADORES DE SERVIÇO</span>
+<h1>Responda orçamentos <em>sem improvisar.</em></h1>
+<p class="lead">Monte um texto claro para atender clientes de informática, manutenção, assistência e outros serviços. Revise os detalhes antes de copiar. Nenhuma mensagem é enviada por esta página.</p>
+<div class="chips"><span class="chip">Sem cadastro</span><span class="chip">Sem disparos</span><span class="chip">Dados processados no navegador</span></div>
+</div></section>
+<section class="section"><div class="wrap"><div class="workspace">
+<div class="panel"><span class="kicker">ETAPA 01</span><h2>Detalhes do atendimento</h2>
+<form id="form">
+<label for="kind">Situação
+<select id="kind"><option value="novo">Primeira resposta</option><option value="escopo">Pedir detalhes antes do preço</option><option value="proposta">Enviar proposta confirmada</option><option value="retorno">Acompanhar orçamento enviado</option></select></label>
+<label for="company">Nome da empresa (opcional)<input id="company" maxlength="70" placeholder="Ex.: Delta Informática"></label>
+<label for="service">Serviço solicitado<textarea id="service" maxlength="240" required placeholder="Ex.: revisão preventiva de computador"></textarea></label>
+<label for="value">Valor já confirmado (opcional)<input id="value" maxlength="20" inputmode="decimal" placeholder="Ex.: 180,00"></label>
+<label for="deadline">Prazo confirmado (opcional)<input id="deadline" maxlength="100" placeholder="Ex.: em até 3 dias úteis"></label>
+<button type="submit">Gerar resposta</button><button class="secondary" type="reset">Limpar</button>
+<p class="tool-hint">Insira apenas preços e prazos realmente confirmados. Não digite dados pessoais sensíveis.</p></form></div>
+<div class="panel"><span class="kicker">ETAPA 02</span><h2>Mensagem para revisão</h2>
+<div id="preview" aria-live="polite" role="status">Escolha a situação, descreva o serviço e clique em “Gerar resposta”.</div>
+<p><button id="copy" disabled type="button">Copiar mensagem</button><button class="secondary" id="select" type="button">Selecionar texto</button></p>
+<p id="feedback" class="tool-hint" aria-live="polite">O envio ao cliente é sempre manual.</p>
+</div></div>
+<div class="cta-wide"><span class="kicker" style="color:#a4d9bd">ATENDIMENTO COMPLETO</span><h2>Conheça o DELTA Conversa PRO.</h2>
+<p>O aplicativo offline reúne 24 situações comerciais, três tons e orientações para cinco setores, além de um guia original em PDF. Não envia WhatsApp automaticamente.</p>
+<a class="action" href="conversa-pro.html?utm_source=ferramenta_gratis&amp;utm_medium=site&amp;utm_campaign=orcamento">Conhecer o Conversa PRO →</a>
+<a class="action" style="background:transparent;color:white;border:1px solid #9cb8ae" href="conversa-demo-gratis.html">Outra demonstração grátis →</a>
+</div></div></section>
+<section class="section"><div class="wrap"><span class="kicker">BOAS PRÁTICAS</span><h2>O que confirmar antes do orçamento?</h2>
+<div class="features"><div class="feature"><h3>Escopo</h3><p>Descreva o serviço e o que ficará fora dele. Quando necessário, faça diagnóstico antes de informar preço definitivo.</p></div>
+<div class="feature"><h3>Valor e prazo</h3><p>Informe somente números e prazos verificados. Se ainda dependem de avaliação, diga isso com clareza.</p></div>
+<div class="feature"><h3>Envio responsável</h3><p>Revise o rascunho e respeite a privacidade e o consentimento do destinatário. A ferramenta não lê contatos.</p></div></div>
+</div></section></main>
+<footer><div class="wrap"><div class="split"><div class="logo" style="color:#ecf6ef">DELTA<span>.</span> STUDIO</div><p><a href="sistemas.html">Catálogo</a> · <a href="mailto:suporte@deltamusic.com.br">Suporte</a></p></div><div class="footer-bottom">© 2026 DELTA Studio · Ferramenta original, sem promessa de resultados.</div></div></footer>
+<script>
+(()=>{"use strict";
+const get=id=>document.getElementById(id),clean=id=>get(id).value.trim().replace(/\s+/g," "),preview=get("preview"),copy=get("copy"),feedback=get("feedback");
+get("form").addEventListener("submit",e=>{
+e.preventDefault();
+const s=clean("service"),name=clean("company"),kind=clean("kind"),v=clean("value"),d=clean("deadline");
+if(!s){get("service").focus();return;}
+if(v&&!/^\d{1,7}(?:[.,]\d{1,2})?$/.test(v)){feedback.textContent="Valor inválido: use número e até duas casas decimais.";return;}
+const opening="Olá! Obrigado pelo contato"+(name?" com a "+name:"")+".";
+const val=v?" Valor confirmado: R$ "+v+".":"",prazo=d?" Prazo confirmado: "+d+".":"";
+const messages={
+novo:opening+"\n\nSobre "+s+", posso ajudar a entender sua necessidade e esclarecer o que está incluído no atendimento."+val+prazo+" Conte comigo para confirmar os próximos passos.",
+escopo:opening+"\n\nPara preparar um orçamento responsável referente a "+s+", preciso confirmar alguns detalhes. Você pode explicar a situação atual e o resultado esperado? Com essas informações, verifico se é necessário diagnóstico antes de informar preço e prazo.",
+proposta:opening+"\n\nSobre "+s+","+(v?val:" ainda preciso confirmar o preço.")+prazo+" Por favor, confira se o escopo está correto. Se houver dúvidas, podemos esclarecer antes de confirmar o serviço.",
+retorno:"Olá! Tudo bem? Gostaria de saber se você conseguiu avaliar a proposta referente a "+s+". Se precisar revisar algum detalhe, estou à disposição. Fico no aguardo do seu retorno."
+};
+preview.textContent=messages[kind]||messages.novo;copy.disabled=false;feedback.textContent="Rascunho gerado nesta página. Revise antes de enviar.";
+});
+get("form").addEventListener("reset",()=>{preview.textContent="Escolha a situação, descreva o serviço e clique em “Gerar resposta”.";copy.disabled=true;feedback.textContent="O envio ao cliente é sempre manual.";});
+copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(preview.textContent);feedback.textContent="Texto copiado. Confira antes de enviar ao cliente.";}catch(e){feedback.textContent="Selecione o texto e copie manualmente."; }});
+get("select").addEventListener("click",()=>{const r=document.createRange(),s=window.getSelection();r.selectNodeContents(preview);s.removeAllRanges();s.addRange(r);feedback.textContent="Texto selecionado para cópia manual.";});
+})();
+</script></body></html>
