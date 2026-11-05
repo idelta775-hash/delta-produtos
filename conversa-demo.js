@@ -18,13 +18,16 @@
   $("demoCopy").disabled=!msg;
  }
  for(const id of ["company","service","situation"]){$(id).addEventListener("input",render);$(id).addEventListener("change",render);}
- $("demoCopy").addEventListener("click",async()=>{
+ $("demoCopy").addEventListener("click",()=>{
   const msg=content();if(!msg)return;
-  try {
-   if(!navigator.clipboard?.writeText)throw Error("Clipboard indisponível");
-   await navigator.clipboard.writeText(msg);
-   $("demoFeedback").textContent="Mensagem copiada. Revise e envie manualmente apenas em um contato permitido.";
-  }catch(_){$("demoFeedback").textContent="Cópia automática indisponível. Selecione o texto acima e copie manualmente.";}
+  let copied=false;
+  const a=document.createElement("textarea");a.value=msg;a.style.position="fixed";a.style.left="-9999px";
+  document.body.append(a);a.focus();a.select();
+  try{copied=!!document.execCommand("copy")}catch(_){}
+  a.remove();
+  if(copied){$("demoFeedback").textContent="Mensagem copiada. Revise e envie manualmente apenas em um contato permitido.";return;}
+  $("demoFeedback").textContent="Cópia automática indisponível. Selecione o texto acima e copie manualmente.";
+  if(navigator.clipboard?.writeText)navigator.clipboard.writeText(msg).then(()=>$("demoFeedback").textContent="Mensagem copiada. Revise antes de usar.",()=>{});
  });
  render();
 })();
