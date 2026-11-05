@@ -103,3 +103,4 @@ footer p{color:#b8d6cc;font-size:13px;line-height:1.7}
 /* Product-specific marketing gallery: preview crops instead of towering mobile screenshots. */
 .conversa-page .gallery img{height:315px;object-fit:cover;object-position:top}
 @media(max-width:700px){.conversa-page .gallery img{height:215px}}
+\n.reel-preview{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:35px;align-items:center;margin-top:22px}.reel-preview video{display:block;max-width:100%;height:auto;aspect-ratio:9/16;border-radius:15px;background:#0a1730;border:1px solid #567481;box-shadow:0 15px 40px #0c1b2640}.reel-preview h3{font-size:25px;margin:0 0 12px}.reel-preview p{color:#5a717a;line-height:1.75}.reel-preview .action{display:inline-block;margin-top:15px}@media(max-width:700px){.reel-preview{grid-template-columns:1fr;gap:18px}.reel-preview video{width:min(100%,350px);margin:auto}}\n

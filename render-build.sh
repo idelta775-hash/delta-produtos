@@ -20,6 +20,8 @@ done
 # Explicit safe allowlist: preview PDF only; never full paid books/ZIP.
 cp "assets/caixa-ordem-previa.pdf" "$OUT/assets/"
 cp "assets/roteiros-previa.pdf" "$OUT/assets/"
+cp "assets/conversa-pro-reel.mp4" "$OUT/assets/"
+cp "assets/conversa-pro-reel-pt.vtt" "$OUT/assets/"
 
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
