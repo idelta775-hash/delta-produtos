@@ -36,7 +36,7 @@ video{width:min(100%,270px);height:auto;aspect-ratio:9/16;object-fit:cover;borde
 <div><div class="kicker">EDIÇÃO 1.0 • BARBEARIAS</div>
 <h1>Vídeos de barbearia <span>prontos para adaptar.</span> Conteúdo para começar a oferecer seus serviços.</h1>
 <p class="lead">Nove Reels verticais demonstrativos, 48 prompts de IA e um editor de roteiros offline. Um kit para quem cria conteúdo de barbearias e quer sair da página em branco — sem prometer dinheiro fácil.</p>
-<a class="cta" href="https://pay.kiwify.com.br/vAD9CGK" rel="noopener noreferrer" target="_blank" aria-label="Comprar DELTA REELS BARBER PRO por R$ 29,90 no checkout seguro da Kiwify">Comprar kit completo — R$ 29,90</a>
+<a class="cta" href="https://pay.kiwify.com.br/vAD9CGK?src=delta_studio&utm_source=delta_studio&utm_medium=owned_site&utm_campaign=reels_barber_pro" rel="noopener noreferrer" target="_blank" aria-label="Comprar DELTA REELS BARBER PRO por R$ 29,90 no checkout seguro da Kiwify">Comprar kit completo — R$ 29,90</a>
 <p><a class="toplink" href="assets/delta-reels-barber-amostra-gratis.zip" download>Ou baixe a amostra grátis (vídeo e 3 prompts)</a></p>
 <p><a href="#conteudo" class="toplink">Ver tudo que vem no kit ↓</a></p>
 <p class="sub">As três cenas-base são geradas por IA. Os nove Reels são variações dessas cenas com textos e CTAs diferentes. Não mostram clientes reais.</p>
@@ -68,8 +68,9 @@ video{width:min(100%,270px);height:auto;aspect-ratio:9/16;object-fit:cover;borde
 <section class="section"><h2>Veja primeiro. Compre se fizer sentido.</h2><p>Não há resultados financeiros garantidos, automação de postagens ou promessa de viralização. Este produto não substitui um editor completo de vídeo.</p>
 <div class="price"><div class="old">Preço atual na Kiwify • pagamento único</div><div class="value">R$ 29<small>,90</small></div>
 <p>Pacote com nove vídeos demonstrativos, 48 prompts, editor local e licença comercial de utilização dos materiais personalizados.</p>
-<a class="cta" href="https://pay.kiwify.com.br/vAD9CGK" target="_blank" rel="noopener noreferrer" aria-label="Comprar DELTA REELS BARBER PRO por R$ 29,90 no site da Kiwify">Comprar agora na Kiwify — R$ 29,90</a>
+<a class="cta" href="https://pay.kiwify.com.br/vAD9CGK?src=delta_studio&utm_source=delta_studio&utm_medium=owned_site&utm_campaign=reels_barber_pro" target="_blank" rel="noopener noreferrer" aria-label="Comprar DELTA REELS BARBER PRO por R$ 29,90 no site da Kiwify">Comprar agora na Kiwify — R$ 29,90</a>
 <p class="sub">Pagamento realizado diretamente no checkout da Kiwify, em site externo. O acesso aos arquivos é liberado pela plataforma após aprovação do pagamento. Confira o valor e as condições antes de finalizar.</p>
+<p class="sub">Para identificar a origem das compras, rótulos de campanha não pessoais (UTM) podem acompanhar o link até a Kiwify. Nenhum dado de cadastro é enviado por esta página.</p>
 </div></section>
 <section class="section faq"><h2>Perguntas antes de comprar</h2>
 <details><summary>São nove filmagens totalmente diferentes?</summary><p>Não. São nove montagens e mensagens derivadas de três cenas-base originais geradas por IA. Não anunciamos nove cenas independentes.</p></details>
@@ -80,4 +81,39 @@ video{width:min(100%,270px);height:auto;aspect-ratio:9/16;object-fit:cover;borde
 <details><summary>Como receberei o produto?</summary><p>Após a aprovação do pagamento, a Kiwify disponibiliza o acesso à área de membros vinculada ao produto. O ZIP de entrega está anexado à aula “Comece aqui”. O tempo de liberação depende da confirmação do pagamento. A amostra gratuita desta página não contém o pacote pago.</p></details>
 </section>
 </main><footer>© 2026 DELTA Studio • Peças demonstrativas originais geradas com IA • Pagamento processado pela Kiwify • Consulte licença e política de suporte ao comprar.</footer>
+
+<script>
+/* DELTA Attribution V1 — nonpersonal campaign labels only, no cookies, no network or trackers.
+   Kiwify supports src and utm_* on the checkout link. Original direct link works without JS. */
+(function () {
+  "use strict";
+  var base = "https://pay.kiwify.com.br/vAD9CGK";
+  var defaults = {
+    src: "delta_studio",
+    utm_source: "delta_studio",
+    utm_medium: "owned_site",
+    utm_campaign: "reels_barber_pro"
+  };
+  var inbound = new URLSearchParams(window.location.search);
+  var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+  var safe = /^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$/;
+  var target = new URL(base);
+  Object.keys(defaults).forEach(function (key) {
+    target.searchParams.set(key, defaults[key]);
+  });
+  allowed.forEach(function (key) {
+    var value = inbound.get(key);
+    if (value && safe.test(value)) {
+      target.searchParams.set(key, value);
+    }
+  });
+  document.querySelectorAll('a[href^="https://pay.kiwify.com.br/vAD9CGK"]').forEach(function (link) {
+    var destination = new URL(link.href);
+    if (destination.origin === target.origin && destination.pathname === target.pathname) {
+      link.href = target.href;
+      link.rel = "noopener noreferrer";
+    }
+  });
+})();
+</script>
 </body></html>
