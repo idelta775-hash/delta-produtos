@@ -23,6 +23,7 @@ cp "assets/roteiros-previa.pdf" "$OUT/assets/"
 cp "assets/conversa-pro-reel.mp4" "$OUT/assets/"
 cp "assets/conversa-pro-reel-pt.vtt" "$OUT/assets/"
 cp "assets/reels-barber-demo.mp4" "$OUT/assets/"
+cp "assets/delta-reels-barber-anuncio-24s.mp4" "$OUT/assets/"
 cp "assets/reels-barber-demo.jpg" "$OUT/assets/"
 cp "assets/delta-reels-barber-amostra-gratis.zip" "$OUT/assets/"
 
