@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico gratuito para negócios | DELTA Studio</title>
+<meta name="description" content="Identifique a próxima melhoria do seu negócio e conheça ferramentas DELTA adequadas. Gratuito, sem cadastro e sem coleta de contatos.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:title" content="Qual ferramenta ajuda seu negócio? Diagnóstico DELTA">
+<meta property="og:description" content="Três perguntas, um plano de ação e demonstrações disponíveis. Gratuito e sem cadastro.">
+<meta property="og:image" content="https://idelta775-hash.github.io/delta-produtos/assets/ecossistema-sistemas-og.jpg">
+<link rel="canonical" href="https://idelta775-hash.github.io/delta-produtos/diagnostico-negocios.html">
+<meta name="theme-color" content="#081723">
+<style>
+:root{color-scheme:dark;--bg:#081723;--panel:#112b3c;--gold:#eabf79;--cyan:#69dce9;--text:#eef6fc;--muted:#b8cbd7}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 1%,#204c54,transparent 42%),var(--bg);font:16px/1.62 "Segoe UI",Arial,sans-serif;color:var(--text)}
+nav{border-bottom:1px solid #385360;padding:18px 4%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;letter-spacing:.13em;text-decoration:none;color:var(--gold)}
+a{color:var(--cyan)}.wrap{max-width:1020px;margin:auto;padding:0 22px}
+header{padding:64px 0 29px}.kicker{text-transform:uppercase;letter-spacing:.13em;color:var(--gold);font-size:12px;font-weight:800}
+h1{font-size:clamp(38px,5.8vw,66px);line-height:1.08;letter-spacing:-.03em;max-width:750px;margin:17px 0}
+h1 em{font-style:normal;color:var(--cyan)}
+.lead{font-size:19px;color:var(--muted);max-width:760px}
+.panel{background:linear-gradient(125deg,#153445,#0a1c2b);border:1px solid #3d596a;padding:clamp(22px,4vw,40px);border-radius:22px}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+label{display:block;font-size:16px;font-weight:800;margin:0 0 9px}
+select{width:100%;min-height:55px;padding:14px;border-radius:10px;border:1px solid #8094a0;background:#092033;color:var(--text);font-size:15px}
+select:focus,button:focus,a:focus{outline:3px solid var(--cyan);outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 0}
+button,.cta{display:inline-flex;align-items:center;justify-content:center;padding:15px 23px;border-radius:11px;min-height:51px;font-size:16px;font-weight:850;cursor:pointer;text-decoration:none;border:0;background:var(--gold);color:#0b1b29}
+.secondary{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.fine{font-size:13px;color:var(--muted);margin:17px 0 0}
+#result{border:1px solid var(--gold);border-radius:22px;background:#152b3b;padding:30px;margin:32px 0}
+#result[hidden]{display:none}
+#result h2{font-size:clamp(27px,3.5vw,44px);line-height:1.15;margin:12px 0}
+#result>p{color:#d0dce3}ol{margin:12px 0 0;padding-left:24px}li{margin:10px 0}
+.notice{margin:20px 0;padding:15px;border-left:3px solid var(--gold);background:#1a3440;color:var(--muted)}
+footer{border-top:1px solid #3c5060;margin-top:60px;padding:25px;text-align:center;font-size:13px;color:var(--muted)}
+@media(max-width:720px){header{padding:37px 0 20px}.fields{grid-template-columns:1fr}.actions>*{width:100%}#result{padding:21px}}
+</style>
+</head><body>
+<nav><a class="logo" href="index.html">DELTA STUDIO</a><a href="sistemas.html">Catálogo de soluções</a></nav>
+<main class="wrap">
+<header><div class="kicker">Diagnóstico comercial gratuito • Sem cadastro</div>
+<h1>O que seu negócio precisa <em>resolver primeiro?</em></h1>
+<p class="lead">Responda três perguntas e receba um plano prático. As recomendações mostram ferramentas e demonstrações reais da Delta — não promessas de lucro.</p></header>
+<section class="panel">
+<form id="diagnostico" autocomplete="off">
+<div class="fields">
+<div><label for="nicho">1. Tipo de negócio</label>
+<select id="nicho" name="nicho" required>
+<option value="" selected disabled>Selecione seu setor</option>
+<option value="barbearia">Barbearia / salão</option>
+<option value="criador">Criador de conteúdo</option>
+<option value="comercio">Comércio / loja</option>
+<option value="servicos">Serviços técnicos</option>
+<option value="provedor">Provedor de internet</option>
+<option value="outro">Outro negócio</option>
+</select></div>
+<div><label for="problema">2. Maior dificuldade</label>
+<select id="problema" name="problema" required>
+<option value="" selected disabled>Qual problema resolver?</option>
+<option value="reels">Criar Reels e publicidade</option>
+<option value="atendimento">Responder clientes melhor</option>
+<option value="preco">Calcular custos e preços</option>
+<option value="processos">Organizar operações</option>
+<option value="duvida">Escolher ferramentas</option>
+</select></div>
+<div><label for="inicio">3. Como quer começar?</label>
+<select id="inicio" name="inicio" required>
+<option value="" selected disabled>Escolha uma opção</option>
+<option value="gratis">Com uma amostra grátis</option>
+<option value="simples">Com ferramenta simples</option>
+<option value="comparar">Comparando opções</option>
+</select></div>
+</div>
+<div class="actions"><button type="submit">Gerar plano para meu negócio</button></div>
+<p class="fine">Privacidade: as respostas ficam apenas no seu navegador. Não pedimos nome, e-mail ou telefone, nem enviamos suas escolhas a um servidor.</p>
+</form></section>
+<section id="result" hidden tabindex="-1" aria-live="polite">
+<span class="kicker">Resultado do diagnóstico</span><h2 id="titulo"></h2><p id="descricao"></p>
+<strong>Seus três próximos passos</strong><ol id="passos"></ol>
+<div class="actions"><a class="cta" id="primario" href="sistemas.html">Explorar solução</a><a class="cta secondary" id="secundario" href="index.html">Ver opções</a><button class="secondary" id="copiar" type="button">Copiar plano</button></div>
+<div class="notice" id="aviso"></div><p id="copiado" class="fine" role="status"></p>
+</section>
+<p class="fine">O diagnóstico usa regras transparentes, não uma previsão de vendas. A disponibilidade e as condições comerciais devem ser conferidas na página de cada produto. Nenhuma ferramenta é indicada como garantia de faturamento.</p>
+</main>
+<footer>© 2026 DELTA Studio • Recomendações educativas de ferramentas digitais • Nenhuma coleta de dados pessoais pelo diagnóstico.</footer>
+<script>
+"use strict";
+(function(){
+const plans={
+ reels:{title:"Comece por um portfólio visual que o cliente consiga avaliar.",desc:"Mostre uma demonstração realista e identifique que partes utilizam cenas geradas por IA.",steps:["Escolha um serviço real do nicho e prepare um vídeo curto demonstrativo.","Personalize texto, preço e chamada somente com informações verdadeiras.","Ofereça a amostra a interessados e anote objeções antes de investir em anúncios."],a:["Conhecer o kit Reels Barber","reels-barber-pro.html"],b:["Baixar amostra gratuita","assets/delta-reels-barber-amostra-gratis.zip"],warn:"O kit demonstrado contém 9 montagens de 3 cenas de IA; custa R$ 29,90 na Kiwify. Não garante novos clientes."},
+ atendimento:{title:"Padronize primeiro suas respostas e o processo de atendimento.",desc:"Melhorar a comunicação costuma exigir dados corretos, revisão humana e consistência.",steps:["Liste as cinco dúvidas mais comuns de seus clientes.","Prepare respostas objetivas e confira políticas e horários reais.","Teste manualmente os modelos e meça clareza e tempo de resposta."],a:["Conhecer Conversa PRO","conversa-pro.html"],b:["Modelos gratuitos","modelos-atendimento-whatsapp.html"],warn:"Conversa PRO prepara textos: não dispara mensagens automaticamente."},
+ preco:{title:"Entenda custo, margem e escopo antes de definir preço.",desc:"Uma boa proposta comercial começa com cálculo verificável, não com promessas de retorno.",steps:["Registre materiais, tempo de trabalho, despesas e riscos.","Simule cenários para avaliar margem e sustentabilidade.","Apresente orçamento com escopo, condições e validade."],a:["Conhecer Precificador PRO","precificador.html"],b:["Calculadora gratuita de ROI","calculadora-roi-gratis.html"],warn:"O cálculo de ROI é uma simulação, não uma previsão de faturamento."},
+ processos:{title:"Escolha um processo para organizar antes de adquirir software.",desc:"A implantação exige fluxo real, responsáveis, dados corretos e manutenção.",steps:["Documente uma rotina que hoje causa atraso ou retrabalho.","Defina entradas, exceções, responsável e saída esperada.","Compare ferramentas que realmente atendam aos requisitos."],a:["Explorar softwares Delta","sistemas.html"],b:["Curadoria de referências","ecossistema-sistemas.html"],warn:"A curadoria de 30 sistemas externos é informativa; não representa 30 produtos próprios homologados."},
+ duvida:{title:"Compare demonstrações e requisitos antes de comprar.",desc:"Priorize necessidades comprovadas e comece pela solução mais simples que funcione.",steps:["Escreva qual tarefa você deseja resolver em até 30 dias.","Experimente as ferramentas gratuitas e confira limitações.","Considere preço, entrega, suporte, segurança e direitos de uso."],a:["Visitar catálogo Delta","index.html#produtos"],b:["Explorar softwares","sistemas.html"],warn:"Nem todos os produtos estão habilitados para venda. Verifique cada página."}
+};
+const form=document.getElementById("diagnostico");
+const result=document.getElementById("result");
+const el=id=>document.getElementById(id);
+let current=null;
+form.addEventListener("submit",function(e){
+ e.preventDefault();if(!form.reportValidity())return;
+ const niche=el("nicho").value,goal=el("problema").value,start=el("inicio").value;
+ const key=goal==="reels"?"reels":goal==="atendimento"?"atendimento":goal==="preco"?"preco":goal==="processos"?"processos":"duvida";
+ let p=plans[key];
+ if(key==="reels"&&niche!=="barbearia"&&niche!=="criador"){
+ p={...p,title:"Use o exemplo de vídeo como referência, adaptando ao seu setor.",warn:"O kit disponível é voltado a barbearias. Não o utilize para representar um serviço que não foi realizado."};
+ }
+ if(key==="reels"&&start==="gratis"){
+ p={...p,a:["Baixar amostra gratuita","assets/delta-reels-barber-amostra-gratis.zip"],b:["Conhecer kit completo","reels-barber-pro.html"]};
+ }
+ current=p;el("titulo").textContent=p.title;el("descricao").textContent=p.desc;
+ const list=el("passos");list.replaceChildren();
+ p.steps.forEach(s=>{const li=document.createElement("li");li.textContent=s;list.appendChild(li)});
+ el("primario").textContent=p.a[0];el("primario").href=p.a[1];
+ el("secundario").textContent=p.b[0];el("secundario").href=p.b[1];
+ el("aviso").textContent=p.warn;el("copiado").textContent="";
+ result.hidden=false;result.focus();
+});
+el("copiar").addEventListener("click",async function(){
+ if(!current)return;
+ const txt=[current.title,current.desc].concat(current.steps.map((s,i)=>String(i+1)+". "+s)).concat([current.warn]).join("\n");
+ try{await navigator.clipboard.writeText(txt);el("copiado").textContent="Plano copiado."}
+ catch(e){el("copiado").textContent="Não foi possível copiar automaticamente. Selecione o texto do resultado."}
+});
+})();
+</script></body></html>
