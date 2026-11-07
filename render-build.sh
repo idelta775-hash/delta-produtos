@@ -28,6 +28,8 @@ cp "assets/delta-studio-orcamentos-comercial-v431.vtt" "$OUT/assets/"
 cp "assets/delta-reels-barber-anuncio-24s.mp4" "$OUT/assets/"
 cp "assets/reels-barber-demo.jpg" "$OUT/assets/"
 cp "assets/delta-reels-barber-amostra-gratis.zip" "$OUT/assets/"
+# Google Search Console ownership verification; publicly readable file.
+cp "google74965e4ea9b20b4e.html" "$OUT/"
 
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
