@@ -39,7 +39,7 @@
 <div class="info"><strong>Transparência comercial:</strong> esta página contém links de publicidade/afiliado. Se você comprar uma oferta elegível pelo nosso link, a DELTA poderá receber comissão. A compra, entrega, garantia, preço e atendimento do pedido são de responsabilidade do vendedor e da plataforma, conforme as condições aplicáveis. Não há promessa de desconto ou preço mais baixo.</div>
 </div></section><section class="section"><div class="wrap"><span class="kicker">OFERTAS DE PARCEIROS</span><h2>Dez produtos prontos de diferentes categorias</h2><p class="lead">Os produtos foram selecionados no painel oficial de afiliados do Mercado Livre. Confirme as especificações, reputação do vendedor, garantia, frete e preço atual na página de cada anúncio antes de comprar.</p>
 <div class="shop-controls" role="group" aria-label="Filtrar produtos por categoria" id="shop-controls">
-<button type="button" data-filter="all" aria-pressed="true">Todos (10)</button>
+<button type="button" data-filter="all" aria-pressed="true">Todos (10)</button><button type="button" data-filter="curated" aria-pressed="false">Casa e rotina (5)</button>
 <button type="button" data-filter="tech" aria-pressed="false">Tecnologia (5)</button>
 <button type="button" data-filter="home" aria-pressed="false">Casa (2)</button>
 <button type="button" data-filter="tools" aria-pressed="false">Ferramentas (1)</button>
@@ -75,15 +75,34 @@ const group=document.getElementById("shop-controls");
 const result=document.getElementById("shop-result");
 const cards=Array.from(document.querySelectorAll(".offer-grid .offer[data-section]"));
 if(!group||!result||cards.length!==10)return;
-group.addEventListener("click",function(event){
-  const button=event.target.closest("button[data-filter]");
-  if(!button||!group.contains(button))return;
-  const groupId=button.dataset.filter;
-  if(!["all","tech","home","tools","beauty","pets"].includes(groupId))return;
+function applyFilter(groupId){
+  const allowed=["all","curated","tech","home","tools","beauty","pets"];
+  if(!allowed.includes(groupId))return;
   let count=0;
-  for(const card of cards){const show=groupId==="all"||card.dataset.section===groupId;card.hidden=!show;if(show)count++;}
-  for(const item of group.querySelectorAll("button[data-filter]"))item.setAttribute("aria-pressed",String(item===button));
-  result.textContent="Exibindo "+count+" produto"+(count===1?"":"s")+". Preço, frete e disponibilidade são confirmados no parceiro.";
+  for(const card of cards){
+    const show=groupId==="all" ||
+      (groupId==="curated" && ["home","tools","beauty","pets"].includes(card.dataset.section)) ||
+      card.dataset.section===groupId;
+    card.hidden=!show;
+    if(show)count++;
+  }
+  for(const btn of group.querySelectorAll("button[data-filter]")){
+    btn.setAttribute("aria-pressed",String(btn.dataset.filter===groupId));
+  }
+  const label=groupId==="curated"?"Seleção para casa e rotina. ":
+    groupId==="tech"?"Seleção de tecnologia. ":"";
+  result.textContent=label+"Exibindo "+count+" produto"+(count===1?"":"s")+
+    ". Preço, frete e disponibilidade são confirmados no parceiro.";
+}
+group.addEventListener("click",function(event){
+  const btn=event.target.closest("button[data-filter]");
+  if(!btn||!group.contains(btn))return;
+  applyFilter(btn.dataset.filter);
 });
+// Only these first-party, already published/scheduled campaign tags are recognized.
+// No arbitrary URL parameter influences product links or inserted HTML.
+const campaign=new URLSearchParams(window.location.search).get("utm_campaign");
+if(campaign==="delta_ml_tecnologia_v435")applyFilter("tech");
+else if(campaign==="delta_ml_casa_1111_v436")applyFilter("curated");
 })();
 </script></body></html>
