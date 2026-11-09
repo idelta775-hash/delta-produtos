@@ -31,6 +31,13 @@ cp "assets/delta-reels-barber-amostra-gratis.zip" "$OUT/assets/"
 # Google Search Console ownership verification; publicly readable file.
 cp "google74965e4ea9b20b4e.html" "$OUT/"
 
+# Achadinhos da Livia V4.56: copy only audited static, non-secret files.
+mkdir -p "$OUT/achadinhos-v456/assets"
+for name in app.js config.js style.css catalog.json privacy.html; do
+  cp "achadinhos-v456/$name" "$OUT/achadinhos-v456/$name"
+done
+cp "achadinhos-v456/assets/livia_duarte_presenter.jpg" "$OUT/achadinhos-v456/assets/"
+
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"
