@@ -44,6 +44,10 @@ for name in app.js catalog-loader.js store-settings.js detail.js config.js style
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
 cp "achadinhos-v457/assets/livia_duarte_presenter.jpg" "$OUT/achadinhos-v457/assets/"
+# Achadinhos da Livia V4.58: lightweight conversion/navigation assets only.
+for name in commerce-v458.js commerce-v458.css favicon.svg; do
+  cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
+done
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"

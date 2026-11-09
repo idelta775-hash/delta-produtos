@@ -67,7 +67,7 @@
   function visibleProducts() {
     const q = normalize(state.query.trim());
     const filtered = state.products.filter(p =>
-      allowedCategory(p) && (state.category === "Todos" || p.category === state.category) &&
+      allowedCategory(p) && (!window.DeltaCommerce || window.DeltaCommerce.matches(p)) && (state.category === "Todos" || p.category === state.category) &&
       (!q || normalize([p.title, p.category, p.description, p.subtitle, p.group].join(" ")).includes(q))
     );
     if (state.sort === "az") filtered.sort((a,b)=>a.title.localeCompare(b.title,"pt-BR"));
@@ -114,7 +114,9 @@
     const details = elem("a","product-detail-link","Ver detalhes, condições e cuidados de compra →");
     details.href = (config.detailPageUrl || "./produto.html") + "?id=" + encodeURIComponent(product.id);
     details.setAttribute("aria-label","Detalhes de "+product.title);
-    body.append(label,title,description,spacer,notice,details,link);
+    body.append(label,title,description,spacer,notice,details);
+    if (window.DeltaCommerce) body.append(window.DeltaCommerce.decorateCard(product));
+    body.append(link);
     article.append(art,body);
     return article;
   }
@@ -170,6 +172,7 @@
     categoryButtons();render();
   });
   init();
+  document.addEventListener("delta:commerce", () => { state.visible=config.batchSize || 12; render(); });
   document.addEventListener("delta:storemeta", () => { applyMetadata();categoryButtons();render(); });
   const refreshMillis = Math.max(2, Number(config.syncIntervalMinutes || 5)) * 60000;
   window.setInterval(() => { if (!document.hidden) init(); }, refreshMillis);

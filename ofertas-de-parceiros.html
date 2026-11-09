@@ -7,10 +7,23 @@
   <meta name="theme-color" content="#0B1020">
   <meta name="description" content="Achadinhos da Lívia: curadoria de produtos para casa, tecnologia, beleza, pets e muito mais. Você compra diretamente nos marketplaces.">
   <title>Achadinhos da Lívia | Escolhas claras, achados úteis</title>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Achadinhos da Lívia">
+  <meta property="og:title" content="Achadinhos da Lívia | Descobertas para comprar melhor">
+  <meta property="og:description" content="Explore produtos para casa, tecnologia, beleza e outros nichos. Confira preços e disponibilidade no marketplace.">
+  <meta property="og:url" content="https://delta-studio-d3wq.onrender.com/ofertas-de-parceiros.html">
+  <meta property="og:image" content="https://delta-studio-d3wq.onrender.com/achadinhos-v457/assets/livia_duarte_presenter.jpg">
+  <meta property="og:image:alt" content="Lívia Duarte, apresentadora virtual do Achadinhos da Lívia">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics: reservado, não ativado; exige consentimento e ID autorizado. -->
   <link rel="stylesheet" href="./achadinhos-v457/style.css">
+  <link rel="stylesheet" href="./achadinhos-v457/commerce-v458.css">
+  <link rel="icon" type="image/svg+xml" href="./achadinhos-v457/favicon.svg">
   <script defer src="./achadinhos-v457/config.js"></script>
   <script defer src="./achadinhos-v457/catalog-loader.js"></script>
   <script defer src="./achadinhos-v457/store-settings.js"></script>
+  <script defer src="./achadinhos-v457/commerce-v458.js"></script>
   <script defer src="./achadinhos-v457/app.js"></script>
 </head>
 <body>
@@ -27,7 +40,16 @@
         <a href="#como-funciona">Como funciona</a>
         <a href="#sobre">A Lívia</a>
       </nav>
-      <a class="header-link" href="https://www.pinterest.com/joaldosoares/" target="_blank" rel="noopener noreferrer">Nosso Pinterest <span aria-hidden="true">↗</span></a>
+      <div class="nav-addons">
+        <button id="headerSearch" class="header-icon-button" type="button" title="Buscar produtos" aria-label="Buscar produtos">⌕</button>
+        <a class="header-link" href="https://www.pinterest.com/joaldosoares/" target="_blank" rel="noopener noreferrer">Nosso Pinterest <span aria-hidden="true">↗</span></a>
+        <button id="mobileMenuToggle" class="header-icon-button mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+    <div id="mobileNav" class="mobile-nav-panel" hidden>
+      <button type="button" id="mobileMenuClose" aria-label="Fechar menu">Fechar ×</button>
+      <a href="#catalogo">Explorar produtos</a><a href="#como-funciona">Como funciona</a><a href="#sobre">Conheça a Lívia</a>
+      <a href="./achadinhos-v457/privacy.html">Privacidade</a>
     </div>
   </header>
 
@@ -71,6 +93,21 @@
           <div class="catalog-count" id="catalogCount" aria-live="polite">Carregando catálogo…</div>
         </div>
         <p id="syncStatus" class="sync-status" aria-live="polite">Preparando sincronização do catálogo…</p>
+        <div class="commerce-tools" role="group" aria-label="Ferramentas da vitrine">
+          <button type="button" id="favoritesFilter" aria-pressed="false" aria-label="Mostrar só favoritos">♡ Meus favoritos <span id="favoritesCount">0</span></button>
+          <button type="button" id="priceFilterToggle" aria-expanded="false" aria-controls="priceFilters">☷ Filtrar preço</button>
+          <small>Favoritos salvos apenas no seu navegador</small>
+        </div>
+        <aside id="priceFilters" class="commerce-filters" aria-label="Filtrar produtos por preço" hidden>
+          <div class="filter-heading"><h3>Preço verificado</h3><button type="button" id="closePriceFilters" aria-label="Fechar filtros">×</button></div>
+          <p>Somente produtos com preço verificado recentemente aparecem nos resultados deste filtro. Valores e estoque devem ser confirmados no marketplace.</p>
+          <div class="filter-fields">
+            <label for="minPrice">Preço mínimo (R$)<input id="minPrice" type="number" inputmode="decimal" min="0" max="199999" step="0.01" placeholder="Ex.: 50"></label>
+            <label for="maxPrice">Preço máximo (R$)<input id="maxPrice" type="number" inputmode="decimal" min="0" max="199999" step="0.01" placeholder="Ex.: 300"></label>
+          </div>
+          <label class="verify-checkbox"><input type="checkbox" id="priceVerifiedOnly"> Somente preços conferidos</label>
+          <div class="filter-actions"><button type="button" id="applyPriceFilters">Aplicar filtros</button><button type="button" id="clearPriceFilters">Limpar filtros</button></div>
+        </aside>
         <div class="toolbar">
           <label class="search-box" for="searchInput"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" autocomplete="off" placeholder="Buscar fone, cozinha, câmera, ferramentas…" aria-label="Buscar produtos"><span class="search-key" aria-hidden="true">BUSCAR</span></label>
           <label class="sort-box" for="sortSelect">Ordenar <select id="sortSelect" aria-label="Ordenar produtos"><option value="curation">Curadoria</option><option value="featured">Destaques</option><option value="az">Nome A–Z</option><option value="category">Categoria</option></select></label>
@@ -94,6 +131,7 @@
 
     <section class="disclosure shell" aria-label="Transparência dos links"><span aria-hidden="true">ⓘ</span><div><strong>Transparência é parte da nossa seleção.</strong><p>Este site contém links de afiliados. Podemos receber comissão por compras qualificadas sem custo adicional para você. Valores, cupons, disponibilidade e prazo de entrega são determinados pelos vendedores e devem ser conferidos no anúncio. A Lívia é uma personagem virtual criada com inteligência artificial.</p></div></section>
   </main>
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Voltar ao início" hidden>↑</button>
   <footer class="footer"><div class="shell footer-inner"><div class="footer-logo"><span class="brand-mark" aria-hidden="true">Δ</span><span><strong>achadinhos da lívia</strong><small>DELTA Affiliate AI · 2026</small></span></div><div class="footer-links"><a href="#catalogo">Produtos</a><a href="#como-funciona">Como funciona</a><a href="https://www.youtube.com/channel/UCnqnaB8xvBmrcdUHcA6E5Eg" target="_blank" rel="noopener noreferrer">YouTube</a><a href="./achadinhos-v457/privacy.html">Privacidade</a></div><p>Achados úteis. Escolhas claras. Links transparentes.</p></div></footer>
 </body>
 </html>

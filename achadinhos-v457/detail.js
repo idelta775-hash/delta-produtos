@@ -68,6 +68,7 @@ async function main(){
     const p=data.products.find(x=>x.id===id);
     if(!p || window.DELTA_CATEGORY_META?.[p.category]?.active===false)throw Error("Produto indisponível ou em revisão");
     renderProduct(p);renderRelated(data.products,p);
+    document.dispatchEvent(new CustomEvent("delta:detail-ready",{detail:{product:p}}));
     document.querySelector("#syncStatus").textContent=data.source==="google_sheets"?"Informações sincronizadas com o catálogo":"Catálogo de segurança — confirme os detalhes no marketplace";
   }catch(e){
     root.replaceChildren(text("h1","","Produto indisponível"),text("p","","Este produto pode ter sido removido ou pausado na nossa curadoria."),link("./ofertas-de-parceiros.html","Voltar à vitrine","detail-buy"));
