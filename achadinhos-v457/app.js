@@ -102,6 +102,7 @@
     if(reason)body.append(reason);
     body.append(spacer,notice,details);
     if (window.DeltaCommerce) body.append(window.DeltaCommerce.decorateCard(product));
+    if (window.DeltaCompare) body.append(window.DeltaCompare.decorateCard(product));
     body.append(link);
     article.append(art,body);
     return article;
@@ -127,6 +128,7 @@
         return true;
       });
       applyMetadata();
+      window.DeltaCompare?.updateCatalog(state.products);
       const canFilterPrice=state.products.some(p=>Number.isFinite(p.price_brl));
       const filterButton=$("priceFilterToggle");
       if(filterButton){

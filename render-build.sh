@@ -56,6 +56,10 @@ done
 cp "achadinhos-v457/conversion-v461.css" "$OUT/achadinhos-v457/"
 # V4.63: only factual purchase-guidance CSS, no new image sources.
 cp "achadinhos-v457/buyer-guide-v463.css" "$OUT/achadinhos-v457/"
+# V4.65 — allowlisted, self-contained buyer comparison feature; no analytics or purchase automation.
+for name in buyer-compare-v465.js buyer-compare-v465.css; do
+  cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
+done
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"

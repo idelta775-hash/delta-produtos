@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="./achadinhos-v457/realphotos-v460.css">
   <link rel="stylesheet" href="./achadinhos-v457/conversion-v461.css">
   <link rel="stylesheet" href="./achadinhos-v457/buyer-guide-v463.css">
+  <link rel="stylesheet" href="./achadinhos-v457/buyer-compare-v465.css">
   <link rel="icon" type="image/svg+xml" href="./achadinhos-v457/favicon.svg">
   <script defer src="./achadinhos-v457/config.js"></script>
   <script defer src="./achadinhos-v457/catalog-loader.js"></script>
@@ -29,6 +30,7 @@
   <script defer src="./achadinhos-v457/commerce-v458.js"></script>
   <script defer src="./achadinhos-v457/photo-sources-v460.js"></script>
   <script defer src="./achadinhos-v457/realphotos-v460.js"></script>
+  <script defer src="./achadinhos-v457/buyer-compare-v465.js"></script>
   <script defer src="./achadinhos-v457/app.js"></script>
 </head>
 <body>
@@ -147,6 +149,19 @@
 
     <section class="disclosure shell" aria-label="Transparência dos links"><span aria-hidden="true">ⓘ</span><div><strong>Transparência é parte da nossa seleção.</strong><p>Este site contém links de afiliados. Podemos receber comissão por compras qualificadas sem custo adicional para você. Valores, cupons, disponibilidade e prazo de entrega são determinados pelos vendedores e devem ser conferidos no anúncio. A Lívia é uma personagem virtual criada com inteligência artificial.</p></div></section>
   </main>
+  <aside class="compare-tray" id="compareTray" aria-label="Produtos para comparar" hidden>
+    <div class="compare-tray-copy"><span class="compare-tray-title"><span id="compareCount">0</span> de 3 produtos</span>
+      <span id="compareMessage" class="compare-tray-status">Selecione produtos para comparar.</span></div>
+    <button id="compareOpen" type="button" disabled>Comparar agora</button>
+    <button id="compareClear" type="button" aria-label="Limpar produtos escolhidos">Limpar</button>
+    <p id="compareNotice" class="compare-notice" role="status" aria-live="polite"></p>
+  </aside>
+  <dialog class="compare-modal" id="compareDialog" aria-labelledby="compareHeading">
+    <div class="compare-header"><div><h2 id="compareHeading">Compare antes de decidir</h2>
+      <p>Informações da nossa curadoria. Confira modelo, preço, vendedor e garantia na loja oficial.</p></div>
+      <button id="compareClose" class="compare-close" type="button" aria-label="Fechar comparação">Fechar ×</button></div>
+    <div class="compare-scroll"><div class="compare-results" id="compareItems" aria-live="polite"></div></div>
+  </dialog>
   <button type="button" id="backToTop" class="back-to-top" aria-label="Voltar ao início" hidden>↑</button>
   <footer class="footer"><div class="shell footer-inner"><div class="footer-logo"><span class="brand-mark" aria-hidden="true">Δ</span><span><strong>achadinhos da lívia</strong><small>DELTA Affiliate AI · 2026</small></span></div><div class="footer-links"><a href="#catalogo">Produtos</a><a href="#como-funciona">Como funciona</a><a href="https://www.youtube.com/channel/UCnqnaB8xvBmrcdUHcA6E5Eg" target="_blank" rel="noopener noreferrer">YouTube</a><a href="./achadinhos-v457/privacy.html">Privacidade</a></div><p>Achados úteis. Escolhas claras. Links transparentes.</p></div></footer>
 </body>
