@@ -78,6 +78,9 @@ done
 for name in collections-v474.js collections-v474.css affiliate-lists-v474.json; do
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
+# V4.75: original owned educational media for review/social draft use only.
+mkdir -p "$OUT/achadinhos-v457/owned-social-v475"
+cp achadinhos-v457/owned-social-v475/*.jpg "$OUT/achadinhos-v457/owned-social-v475/"
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"
