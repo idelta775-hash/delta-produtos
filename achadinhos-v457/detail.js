@@ -9,6 +9,51 @@ const text=(tag,cls,value)=>{const e=document.createElement(tag);if(cls)e.classN
 const link=(href,label,cls)=>{const a=text("a",cls,label);a.href=href;return a};
 const palette={"Tecnologia":"💻","Casa":"🏠","Beleza":"✨","Pets":"🐾","Ferramentas":"🛠️","Automotivo":"🚘"};
 function safeId(v){return typeof v==="string"&&/^[A-Za-z0-9_-]{6,80}$/.test(v)}
+function shareBox(p) {
+  // User-initiated sharing of the DELTA detail page; NEVER copies or opens
+  // affiliate links automatically, and NEVER inherits tracking from an ad.
+  const box=text("div","delta-product-share");
+  const button=text("button","delta-share-action","Compartilhar este achado");
+  button.type="button";
+  const message=text("p","delta-share-feedback","");
+  message.setAttribute("role","status");
+  message.setAttribute("aria-live","polite");
+  const fallback=text("input","delta-share-fallback");
+  fallback.type="text";fallback.readOnly=true;fallback.hidden=true;
+  fallback.setAttribute("aria-label","Link para copiar manualmente");
+  const url=new URL(config.detailPageUrl||"./produto.html",location.href);
+  url.search="";url.hash="";url.searchParams.set("id",p.id);
+  const shareUrl=url.href;
+  button.addEventListener("click",async()=>{
+    const data={
+      title:p.title+" | "+(config.brand||"Achadinhos DELTA"),
+      text:"Veja este produto na nossa loja. Publicidade: podemos receber comissão por compras elegíveis. Preço e disponibilidade devem ser confirmados no anúncio.",
+      url:shareUrl
+    };
+    try {
+      if(typeof navigator.share==="function") {
+        await navigator.share(data);
+        message.textContent="Compartilhamento aberto no dispositivo.";
+        return;
+      }
+      if(navigator.clipboard && typeof navigator.clipboard.writeText==="function") {
+        await navigator.clipboard.writeText(data.text+" "+shareUrl);
+        message.textContent="Texto e link do produto copiados. Cole na rede ou conversa que desejar.";
+        return;
+      }
+      throw Error("copy_not_supported");
+    }catch(e) {
+      if(e&&e.name==="AbortError") {
+        message.textContent="Compartilhamento cancelado.";
+        return;
+      }
+      fallback.hidden=false;fallback.value=data.text+" "+shareUrl;fallback.focus();fallback.select();
+      message.textContent="Selecione e copie o texto acima para compartilhar manualmente.";
+    }
+  });
+  box.append(button,message,fallback);
+  return box;
+}
 function renderProduct(p){
   root.replaceChildren();
   document.title=p.title+" | "+(config.brand||"Achadinhos da Lívia");
@@ -42,7 +87,7 @@ function renderProduct(p){
   for(const item of [...criteria,"Confira preço, vendedor, avaliações, frete e devolução no anúncio original"])
     list.append(text("li","",item));
   checks.append(list);
-  copy.append(box,buy,note,checks);layout.append(art,copy);
+  copy.append(box,buy,shareBox(p),note,checks);layout.append(art,copy);
   root.append(back,layout);
 }
 function renderRelated(items,main){

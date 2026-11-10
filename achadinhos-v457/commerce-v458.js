@@ -65,11 +65,11 @@ function favoriteButton(p){
  return btn;
 }
 function shareButton(p){
- const btn=make("button","share-product","Compartilhar");
+ const btn=make("button","share-product","WhatsApp");
  btn.type="button";btn.setAttribute("aria-label","Compartilhar página de "+p.title+" no WhatsApp");
  btn.addEventListener("click",()=>{
    const link=productPage(p);
-   const msg="Olha esta indicação da "+(window.DELTA_PRESENTER_PROFILE?.name||"Lívia")+": "+p.title+". Confira os detalhes e o anúncio original aqui: "+link+" (site com links de afiliado).";
+   const msg="Olha esta indicação da "+(window.DELTA_PRESENTER_PROFILE?.name||"Lívia")+": "+p.title+". Confira os detalhes e o anúncio original aqui: "+link+". #Publicidade: podemos receber comissão por compras elegíveis.";
    const url="https://api.whatsapp.com/send?text="+encodeURIComponent(msg);
    window.open(url,"_blank","noopener,noreferrer");
  });
