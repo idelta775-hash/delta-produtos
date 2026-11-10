@@ -74,6 +74,10 @@ done
 for name in saved-searches-v473.js saved-searches-v473.css; do
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
+# V4.74: active-product category links, and gated official affiliate list feed (empty until verified).
+for name in collections-v474.js collections-v474.css affiliate-lists-v474.json; do
+  cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
+done
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"

@@ -13,6 +13,7 @@
   }
   const urlSearch=new URLSearchParams(location.search).get("busca")||"";
   const initialQuery=urlSearch.slice(0,80);
+  const selectedCategoryFromUrl=()=> (new URLSearchParams(location.search).get("categoria")||"").slice(0,90);
   const state = { products: [], category: "Todos", query: initialQuery, sort: "curation", visible: config.batchSize || 12 };
   const $ = (id) => document.getElementById(id);
   const grid = $("productGrid");
@@ -59,6 +60,9 @@
       btn.append(number);
       btn.addEventListener("click", () => {
         state.category = name;
+        const href=new URL(location.href);
+        if(name==="Todos")href.searchParams.delete("categoria");else href.searchParams.set("categoria",name);
+        history.replaceState(null,"",href.pathname+href.search+href.hash);
         state.visible = config.batchSize || 12;
         categoryButtons();
         render();
@@ -136,6 +140,7 @@
       if(search && state.query)search.value=state.query;
       window.DeltaDeals?.update(state.products);
       window.DeltaSavedQueries?.updateCatalog(state.products);
+      window.DeltaCollections?.updateCatalog(state.products);
       window.DeltaDeals?.search(state.query);
       const canFilterPrice=state.products.some(p=>Number.isFinite(p.price_brl));
       const filterButton=$("priceFilterToggle");
@@ -147,6 +152,8 @@
           filterButton.setAttribute("aria-expanded","false");
         }
       }
+      const requestedCategory=selectedCategoryFromUrl();
+      if(requestedCategory && state.products.some(p=>allowedCategory(p)&&p.category===requestedCategory))state.category=requestedCategory;
       if(state.category !== "Todos" && !state.products.some(p => allowedCategory(p) && p.category===state.category)) state.category = "Todos";
       categoryButtons();
       render();
@@ -178,6 +185,8 @@
   });
   $("resetBtn").addEventListener("click", () => {
     state.category="Todos"; state.query=""; search.value=""; window.DeltaDeals?.search("");
+    const href=new URL(location.href);href.searchParams.delete("categoria");
+    history.replaceState(null,"",href.pathname+href.search+href.hash);
     state.visible=config.batchSize || 12;
     categoryButtons();render();
   });

@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="./achadinhos-v457/dual-v467.css">
   <link rel="stylesheet" href="./achadinhos-v457/deals-v468.css">
   <link rel="stylesheet" href="./achadinhos-v457/saved-searches-v473.css">
+  <link rel="stylesheet" href="./achadinhos-v457/collections-v474.css">
   <link rel="icon" type="image/svg+xml" href="./achadinhos-v457/favicon-lara-v467.svg">
   <link rel="stylesheet" href="./achadinhos-v457/lara-v467.css">
   <script defer src="./achadinhos-v457/config.js"></script>
@@ -38,6 +39,7 @@
   <script defer src="./achadinhos-v457/buyer-compare-v465.js"></script>
   <script defer src="./achadinhos-v457/deals-v468.js"></script>
   <script defer src="./achadinhos-v457/saved-searches-v473.js"></script>
+  <script defer src="./achadinhos-v457/collections-v474.js"></script>
   <script defer src="./achadinhos-v457/app.js"></script>
 </head>
 <body>
@@ -86,7 +88,22 @@
       </div>
     </section>
 
-        <section class="deal-radar shell" id="ofertas-verificadas" aria-labelledby="dealHeading">
+            <section class="theme-collections shell" id="themeCollections" aria-labelledby="themeCollectionsHeading" hidden>
+      <div class="theme-collections-heading">
+        <div><h2 id="themeCollectionsHeading">Explore por interesse</h2><p>Estas coleções usam somente produtos já cadastrados na mesma loja.</p></div>
+        <span id="themeCollectionsCount" class="theme-collections-count"></span>
+      </div>
+      <div id="themeCollectionsGrid" class="theme-collections-grid"></div>
+      <p id="themeCollectionsFeedback" role="status" aria-live="polite"></p>
+      <input id="themeCollectionsManualCopy" hidden type="text" readonly aria-label="Endereço para copiar manualmente">
+    </section>
+    <section class="official-affiliate-lists shell" id="officialAffiliateLists" aria-label="Listas oficiais do Mercado Livre" hidden>
+      <h2>Listas públicas de afiliado</h2>
+      <p>Seleções compartilhadas pela mesma conta de afiliado. Confira os itens e condições no marketplace.</p>
+      <div id="officialAffiliateListsGrid" class="official-affiliate-lists-grid"></div>
+    </section>
+
+<section class="deal-radar shell" id="ofertas-verificadas" aria-labelledby="dealHeading">
       <div class="deal-title-row">
         <div><span class="deal-kicker">Radar DELTA · Lívia e Lara</span>
           <h2 id="dealHeading">Oportunidades com informação verificada</h2>

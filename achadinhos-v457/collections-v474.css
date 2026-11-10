@@ -1,0 +1,18 @@
+/* DELTA V4.74 - active-product theme collections */
+.theme-collections,.official-affiliate-lists{margin:14px auto 23px}
+.theme-collections-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin:0 0 14px}
+.theme-collections h2,.official-affiliate-lists h2{font-size:clamp(20px,2vw,25px);margin:0 0 4px}
+.theme-collections p,.official-affiliate-lists p{color:var(--muted);font-size:12px}
+.theme-collections-count{color:var(--blue);font-weight:800;font-size:12px}
+.theme-collections-grid,.official-affiliate-lists-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.theme-collection,.official-affiliate-list{padding:17px;background:white;border:1px solid var(--edge);border-radius:16px;min-width:0}
+.theme-collection h3,.official-affiliate-list h3{margin:0;color:var(--ink);font-size:16px}
+.theme-collection p,.official-affiliate-list p{margin:5px 0 12px}
+.theme-collection-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.theme-collection-go,.official-affiliate-list-link{padding:9px 11px;border-radius:10px;text-decoration:none;background:var(--navy);color:white;font-size:12px;font-weight:800}
+.theme-collection-copy{border:1px solid var(--edge);border-radius:10px;padding:8px 10px;background:var(--page);font-size:11px;font-weight:800;color:var(--blue);cursor:pointer}
+#themeCollectionsManualCopy{display:block;width:100%;max-width:580px;font-size:12px;border-radius:8px;padding:10px;margin-top:10px}
+#themeCollectionsManualCopy[hidden]{display:none}
+#themeCollectionsFeedback{margin-top:7px;color:var(--blue);font-size:12px}
+@media(max-width:900px){.theme-collections-grid,.official-affiliate-lists-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.theme-collections-grid,.official-affiliate-lists-grid{grid-template-columns:1fr}.theme-collection{padding:14px}}
