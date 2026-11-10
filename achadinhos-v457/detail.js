@@ -15,13 +15,8 @@ function renderProduct(p){
   const back=link("./ofertas-de-parceiros.html","← Voltar para os achadinhos","back-link");
   const layout=text("div","detail-layout");
   const art=text("div","detail-art");
-  art.setAttribute("data-category",p.category);
-  art.append(text("span","detail-art-emoji",palette[p.category]||"✦"));
-  if(p.image_url&&p.image_publication_license==="approved_for_public_marketing"){
-    const image=document.createElement("img");
-    image.alt=p.title;image.loading="lazy";image.src=p.image_url;
-    image.addEventListener("error",()=>image.remove());art.append(image);
-  }
+  if(window.DeltaVisuals) art.append(window.DeltaVisuals.artwork(p,true));
+  else art.append(text("span","detail-art-emoji",palette[p.category]||"✦"));
   const copy=text("div","detail-copy");
   copy.append(text("span","detail-category",p.category+" · "+p.marketplace));
   copy.append(text("h1","",p.title));

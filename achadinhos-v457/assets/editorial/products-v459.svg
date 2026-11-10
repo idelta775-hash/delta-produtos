@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+<defs>
+<linearGradient id="bodyDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#404d68"/><stop offset=".54" stop-color="#1b2438"/><stop offset="1" stop-color="#090f1a"/></linearGradient>
+<linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2a5e93"/><stop offset=".5" stop-color="#54a7c2"/><stop offset="1" stop-color="#173257"/></linearGradient>
+</defs>
+<symbol id="airfryer" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="134" y="65" width="212" height="244" rx="45" fill="url(#bodyDark)" stroke="#53627c" stroke-width="4"/><rect x="157" y="86" width="166" height="193" rx="29" fill="#191e2b"/><ellipse cx="240" cy="130" rx="35" ry="35" fill="#0d1220" stroke="#d7b46c" stroke-width="7"/><circle cx="240" cy="130" r="18" fill="#30394a"/><ellipse cx="240" cy="209" rx="35" ry="35" fill="#0d1220" stroke="#d7b46c" stroke-width="7"/><circle cx="240" cy="209" r="18" fill="#30394a"/><rect x="158" y="270" width="164" height="30" rx="14" fill="#37465c"/><rect x="210" y="260" width="60" height="49" rx="12" fill="#d0d8df" stroke="#f3d995" stroke-width="4"/>
+ </symbol>
+<symbol id="vacuum" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <ellipse cx="240" cy="227" rx="170" ry="93" fill="#1d2638" stroke="#76839a" stroke-width="7"/><ellipse cx="240" cy="213" rx="153" ry="79" fill="url(#bodyDark)"/><ellipse cx="240" cy="201" rx="56" ry="43" fill="#121a2c" stroke="#d9b777" stroke-width="6"/><circle cx="240" cy="200" r="17" fill="#546079"/><rect x="90" y="229" width="300" height="24" rx="12" fill="#1a1e2e"/><path d="M126 280 l-20 37 m248 -37 20 37" stroke="#2a3348" stroke-width="12" stroke-linecap="round"/>
+ </symbol>
+<symbol id="phone" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="155" y="27" width="170" height="317" rx="32" fill="#1d2433" stroke="#7e8ca8" stroke-width="9"/><rect x="167" y="46" width="146" height="275" rx="25" fill="url(#screenGrad)"/><path d="M180 217 q55 -100 117 -83 v131 h-117z" fill="#a6d9e9" opacity=".6"/><circle cx="239" cy="59" r="8" fill="#131d35"/>
+ </symbol>
+<symbol id="tv" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="42" y="54" width="396" height="245" rx="21" fill="#171d2c" stroke="#9aa6b7" stroke-width="8"/><rect x="57" y="68" width="366" height="218" rx="10" fill="url(#screenGrad)"/><path d="M75 230 Q210 70 410 130 L410 277 75 277Z" fill="#78adbe" opacity=".63"/><path d="M240 305 v24 m-90 2 h180" stroke="#50596c" stroke-width="16" stroke-linecap="round"/>
+ </symbol>
+<symbol id="laptop" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="95" y="67" width="290" height="198" rx="18" fill="#111827" stroke="#aeb4c3" stroke-width="8"/><rect x="108" y="78" width="264" height="174" rx="7" fill="url(#screenGrad)"/><path d="M58 275 h364 l-22 31 H80z" fill="#b4bbc8"/><rect x="200" y="277" width="80" height="8" rx="4" fill="#6f7d91"/>
+ </symbol>
+<symbol id="router" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="98" y="183" width="284" height="124" rx="30" fill="#f3f5f7" stroke="#95a8c1" stroke-width="6"/><rect x="125" y="210" width="230" height="70" rx="19" fill="#dce5f0"/><path d="M134 197 L108 76 M346 197 L373 76" stroke="#2c3a54" stroke-width="21" stroke-linecap="round"/><circle cx="177" cy="277" r="6" fill="#3de0b3"/><circle cx="203" cy="277" r="6" fill="#3de0b3"/><path d="M205 154 q35 -42 70 0 m-49 -23 q14 -15 28 0" fill="none" stroke="#eccd86" stroke-width="9" stroke-linecap="round"/>
+ </symbol>
+<symbol id="ssd" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="98" y="139" width="284" height="86" rx="18" fill="#16324c" stroke="#9db2c0" stroke-width="6"/><rect x="133" y="155" width="145" height="54" rx="8" fill="#293851"/><g fill="#d9c588"><rect x="112" y="225" width="18" height="14"/><rect x="143" y="225" width="18" height="14"/><rect x="174" y="225" width="18" height="14"/><rect x="205" y="225" width="18" height="14"/><rect x="236" y="225" width="18" height="14"/></g><rect x="302" y="157" width="53" height="45" rx="6" fill="#122033" stroke="#7fa9ba" stroke-width="4"/>
+ </symbol>
+<symbol id="camera" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="168" y="86" width="144" height="112" rx="30" fill="#f9fafc" stroke="#bcc8d5" stroke-width="6"/><rect x="181" y="182" width="118" height="101" rx="48" fill="#1d283b"/><circle cx="240" cy="225" r="40" fill="#101b30" stroke="#7c91aa" stroke-width="9"/><circle cx="240" cy="225" r="19" fill="#306fa0"/><circle cx="231" cy="216" r="7" fill="#d1e9ef"/><path d="M175 112 L121 47 M305 112 l54 -65" stroke="#e6e9ee" stroke-width="11" stroke-linecap="round"/>
+ </symbol>
+<symbol id="drill" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <path d="M93 147 q0 -31 35 -31 h173 q40 0 40 35 v57 h-173 q-30 0 -38 -29H93Z" fill="#2f6cae" stroke="#162c4c" stroke-width="7"/><rect x="340" y="155" width="68" height="33" rx="6" fill="#b3bdc8"/><path d="M409 171 h38" stroke="#d5deeb" stroke-width="11"/><path d="M180 205 h84 l-20 109 h-57z" fill="#203f65" stroke="#142840" stroke-width="7"/><rect x="195" y="252" width="66" height="33" rx="7" fill="#141d33"/><rect x="122" y="135" width="34" height="56" rx="7" fill="#f5c456"/>
+ </symbol>
+<symbol id="brush" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <g transform="rotate(-27 235 183)"><rect x="211" y="122" width="66" height="196" rx="28" fill="#272c38" stroke="#d0a98b" stroke-width="7"/><rect x="196" y="36" width="95" height="111" rx="41" fill="#c98e77" stroke="#4e3d3f" stroke-width="5"/><g stroke="#202935" stroke-width="5" stroke-linecap="round"><path d="M204 47 l-27 -13 M240 34 V4 M278 47 l27 -15 M200 84 l-25 0 M283 86 l30 0 M205 116 l-24 20 M280 117 l25 20"/></g><rect x="230" y="245" width="28" height="8" rx="3" fill="#e1d6c6"/></g>
+ </symbol>
+<symbol id="earbuds" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <g fill="#f4f6f8" stroke="#9cadbc" stroke-width="8"><path d="M159 99 q-42 0 -42 42 v48 q0 32 27 32 q31 0 31 -33v-52q0 -38 -16 -37Z"/><path d="M326 99 q42 0 42 42v48q0 32 -27 32 q-31 0 -31 -33v-52q0 -38 16 -37Z"/></g><rect x="150" y="215" width="180" height="90" rx="42" fill="#e9edf3" stroke="#a4adbd" stroke-width="7"/><rect x="186" y="256" width="109" height="12" rx="6" fill="#9dabbb"/>
+ </symbol>
+<symbol id="speaker" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="114" y="88" width="252" height="207" rx="58" fill="#273044" stroke="#737f9b" stroke-width="6"/><ellipse cx="236" cy="193" rx="78" ry="78" fill="#151e30" stroke="#dbbb7f" stroke-width="7"/><circle cx="236" cy="194" r="34" fill="#34475f"/><path d="M147 106 L165 64 M319 106 l21 -42" stroke="#151e30" stroke-width="18" stroke-linecap="round"/>
+ </symbol>
+<symbol id="console" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <path d="M167 60 L121 312 q-5 22 23 15l57 -32 V54z" fill="#f4f7fc" stroke="#a4b7c8" stroke-width="8"/><path d="M310 60 L353 312 q5 23 -23 15l-55 -32V54z" fill="#f4f7fc" stroke="#a4b7c8" stroke-width="8"/><path d="M202 55 h73 v242 h-73z" fill="#0c1526"/><path d="M173 314 q63 -31 134 0" fill="none" stroke="#405675" stroke-width="15" stroke-linecap="round"/>
+ </symbol>
+<symbol id="perfume" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="170" y="125" width="140" height="185" rx="17" fill="#f2d9b3" opacity=".88" stroke="#c19f6c" stroke-width="7"/><rect x="204" y="68" width="72" height="66" rx="9" fill="#dbbd8e"/><rect x="216" y="49" width="47" height="22" rx="6" fill="#b69767"/><rect x="192" y="189" width="97" height="53" rx="8" fill="#fff9e8" opacity=".9"/><path d="M205 270 h69" stroke="#b89561" stroke-width="8" stroke-linecap="round"/>
+ </symbol>
+<symbol id="bottle" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="196" y="99" width="88" height="211" rx="22" fill="#debc86" stroke="#b78f62" stroke-width="7"/><rect x="208" y="59" width="64" height="48" rx="8" fill="#d4b27c"/><rect x="206" y="172" width="68" height="87" rx="8" fill="#fff3df" opacity=".94"/><path d="M221 214 h40" stroke="#c5a06e" stroke-width="8" stroke-linecap="round"/>
+ </symbol>
+<symbol id="toolcase" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="88" y="138" width="303" height="172" rx="21" fill="#2b364e" stroke="#b6b9bd" stroke-width="6"/><rect x="150" y="103" width="181" height="44" rx="19" fill="none" stroke="#343e51" stroke-width="18"/><path d="M93 217 h292" stroke="#c3a36c" stroke-width="11"/><rect x="218" y="207" width="44" height="35" rx="7" fill="#ddc79c"/><circle cx="171" cy="180" r="17" fill="#c6d0dd"/><rect x="296" y="174" width="44" height="18" rx="9" fill="#cad6e1"/>
+ </symbol>
+<symbol id="watch" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="195" y="25" width="91" height="315" rx="27" fill="#222a3a" stroke="#606d85" stroke-width="6"/><rect x="149" y="105" width="183" height="155" rx="43" fill="#162036" stroke="#9ba4b5" stroke-width="8"/><rect x="163" y="118" width="155" height="128" rx="30" fill="url(#screenGrad)"/><circle cx="240" cy="187" r="42" fill="none" stroke="#e6c180" stroke-width="9"/><path d="M240 157 v30 l19 14" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+ </symbol>
+<symbol id="shaver" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="196" y="135" width="88" height="194" rx="26" fill="#263145" stroke="#8a9baa" stroke-width="6"/><rect x="179" y="73" width="122" height="76" rx="26" fill="#d1d9dd" stroke="#8795a3" stroke-width="7"/><path d="M194 112 h92" stroke="#6a8090" stroke-width="11"/><rect x="213" y="232" width="54" height="13" rx="6" fill="#bc9b63"/>
+ </symbol>
+<symbol id="fountain" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <path d="M144 185 h192 v109 q0 20 -20 20H164q-20 0 -20 -20Z" fill="#eff5f9" stroke="#9fb8cc" stroke-width="7"/><ellipse cx="240" cy="184" rx="99" ry="25" fill="#c9e8f1" stroke="#a1c5d6" stroke-width="6"/><path d="M240 178 V97 Q239 73 219 80 M240 119 q23 -22 41 -8" stroke="#69bfd7" stroke-width="13" fill="none" stroke-linecap="round"/><path d="M175 258 q65 23 130 0" stroke="#7cbcca" stroke-width="9" fill="none"/>
+ </symbol>
+<symbol id="cosmetic" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="186" y="107" width="108" height="208" rx="27" fill="#f6efe8" stroke="#c6abb0" stroke-width="6"/><rect x="201" y="74" width="78" height="41" rx="7" fill="#dec5cb"/><rect x="198" y="180" width="83" height="71" rx="7" fill="#e0c3ca"/><path d="M215 217 h49" stroke="#fdf4f1" stroke-width="9" stroke-linecap="round"/>
+ </symbol>
+<symbol id="monitor" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="78" y="70" width="324" height="229" rx="16" fill="#10192c" stroke="#91a3b7" stroke-width="7"/><rect x="90" y="83" width="300" height="203" rx="7" fill="url(#screenGrad)"/><path d="M240 305 v23 m-67 4 h134" stroke="#8290a1" stroke-width="16" stroke-linecap="round"/>
+ </symbol>
+<symbol id="fan" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <circle cx="240" cy="171" r="112" fill="#f3f7fa" stroke="#c3ccd6" stroke-width="8"/><circle cx="240" cy="171" r="24" fill="#45516a"/><path d="M240 147 Q150 84 166 152 Q166 186 222 184 M264 173 Q309 92 329 154 Q334 186 259 197 M235 198 Q216 284 266 263 Q293 248 250 197" fill="#b5c8d3"/><path d="M238 281 v33 m-67 4 h135" stroke="#596a83" stroke-width="13" stroke-linecap="round"/>
+ </symbol>
+<symbol id="generic" viewBox="0 0 480 360">
+ <circle cx="240" cy="177" r="149" fill="#fff" opacity=".07"/>
+ <ellipse cx="244" cy="328" rx="152" ry="18" fill="#111729" opacity=".25"/>
+ <rect x="159" y="107" width="162" height="179" rx="26" fill="url(#bodyDark)" stroke="#c7b27d" stroke-width="6"/><rect x="179" y="129" width="124" height="135" rx="17" fill="#3a536d"/><path d="M209 166 l31 -33 31 33 -31 33z" fill="#e9c679"/><path d="M191 290 h98" stroke="#e6c78a" stroke-width="9" stroke-linecap="round"/>
+ </symbol>
+</svg>

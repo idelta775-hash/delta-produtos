@@ -77,26 +77,8 @@
   }
   function makeCard(product) {
     const article = elem("article", "product-card");
-    const art = elem("div", "product-art");
-    art.dataset.category = product.category || "Outros";
-    const tag = elem("span", "market-chip", product.marketplace || "Marketplace");
-    const symbol = elem("span", "emoji", icons[product.category] || "✦");
-    symbol.setAttribute("aria-hidden","true");
-    art.append(tag, symbol);
-    // Product imagery is NOT displayed until rights for public marketing are evidenced.
-    if (product.image_publication_license === "approved_for_public_marketing" && product.image_url) {
-      try {
-        const u = new URL(product.image_url);
-        if (u.protocol === "https:" && !u.username && !u.password) {
-          const img = elem("img", "licensed-image");
-          img.src = u.href;
-          img.alt = product.title;
-          img.loading = "lazy";
-          img.addEventListener("error", () => img.remove());
-          art.append(img);
-        }
-      } catch (_) { /* leave original category artwork */ }
-    }
+    const art = window.DeltaVisuals ? window.DeltaVisuals.artwork(product) : elem("div", "product-art");
+    if(!window.DeltaVisuals) art.append(elem("span","emoji",icons[product.category] || "✦"));
     const body = elem("div", "product-body");
     const label = elem("span", "item-category", product.category || "Outros");
     const title = elem("h3", "", product.title);
@@ -129,6 +111,7 @@
     empty.hidden = products.length !== 0;
     more.hidden = products.length <= state.visible;
     if (products.length === 0) grid.append(elem("p", "loading", "Sua busca não encontrou produtos nesta seleção."));
+    if(window.DeltaVisuals) window.DeltaVisuals.spotlight(state.products.filter(allowedCategory));
   }
   async function init() {
     try {

@@ -48,6 +48,12 @@ cp "achadinhos-v457/assets/livia_duarte_presenter.jpg" "$OUT/achadinhos-v457/ass
 for name in commerce-v458.js commerce-v458.css favicon.svg; do
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
+# DELTA Affiliate V4.59 — self-created product visuals and brand system (no 3rd party images).
+for name in visuals-v459.js visuals-v459.css; do
+  cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
+done
+mkdir -p "$OUT/achadinhos-v457/assets/editorial"
+cp "achadinhos-v457/assets/editorial/products-v459.svg" "$OUT/achadinhos-v457/assets/editorial/"
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"
