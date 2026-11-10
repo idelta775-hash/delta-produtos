@@ -97,6 +97,7 @@ function spotlight(products){
  const section=document.getElementById("studioSection");
  if(!root)return;
  root.replaceChildren();
+ root.setAttribute("aria-busy","false");
  const selected=chooseSpotlight(products);
  for(const p of selected){
   const tile=$("article","studio-highlight-tile");
