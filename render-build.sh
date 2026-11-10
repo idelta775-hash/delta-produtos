@@ -66,6 +66,10 @@ for name in presenter-lara-v467.js lara-v467.css favicon-lara-v467.svg; do
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
 
+# V4.68: verified deals UI and bounded full-catalog search.
+for name in deals-v468.js deals-v468.css; do
+  cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
+done
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"

@@ -11,7 +11,9 @@
     for (const [name,value] of Object.entries(window.DELTA_CATEGORY_META||{}))
       if(value?.symbol) icons[name]=value.symbol;
   }
-  const state = { products: [], category: "Todos", query: "", sort: "curation", visible: config.batchSize || 12 };
+  const urlSearch=new URLSearchParams(location.search).get("busca")||"";
+  const initialQuery=urlSearch.slice(0,80);
+  const state = { products: [], category: "Todos", query: initialQuery, sort: "curation", visible: config.batchSize || 12 };
   const $ = (id) => document.getElementById(id);
   const grid = $("productGrid");
   const count = $("catalogCount");
@@ -129,6 +131,9 @@
       });
       applyMetadata();
       window.DeltaCompare?.updateCatalog(state.products);
+      if(search && state.query)search.value=state.query;
+      window.DeltaDeals?.update(state.products);
+      window.DeltaDeals?.search(state.query);
       const canFilterPrice=state.products.some(p=>Number.isFinite(p.price_brl));
       const filterButton=$("priceFilterToggle");
       if(filterButton){
@@ -156,6 +161,7 @@
   }
   search.addEventListener("input", (event) => {
     state.query = event.target.value;
+    window.DeltaDeals?.search(state.query);
     state.visible = config.batchSize || 12;
     render();
   });
@@ -168,7 +174,7 @@
     render();
   });
   $("resetBtn").addEventListener("click", () => {
-    state.category="Todos"; state.query=""; search.value="";
+    state.category="Todos"; state.query=""; search.value=""; window.DeltaDeals?.search("");
     state.visible=config.batchSize || 12;
     categoryButtons();render();
   });

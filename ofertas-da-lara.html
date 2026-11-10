@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="./achadinhos-v457/buyer-guide-v463.css">
   <link rel="stylesheet" href="./achadinhos-v457/buyer-compare-v465.css">
   <link rel="stylesheet" href="./achadinhos-v457/dual-v467.css">
+  <link rel="stylesheet" href="./achadinhos-v457/deals-v468.css">
   <link rel="icon" type="image/svg+xml" href="./achadinhos-v457/favicon-lara-v467.svg">
   <link rel="stylesheet" href="./achadinhos-v457/lara-v467.css">
   <script defer src="./achadinhos-v457/config.js"></script>
@@ -34,6 +35,7 @@
   <script defer src="./achadinhos-v457/photo-sources-v460.js"></script>
   <script defer src="./achadinhos-v457/realphotos-v460.js"></script>
   <script defer src="./achadinhos-v457/buyer-compare-v465.js"></script>
+  <script defer src="./achadinhos-v457/deals-v468.js"></script>
   <script defer src="./achadinhos-v457/app.js"></script>
 </head>
 <body>
@@ -49,7 +51,7 @@
         <a href="#catalogo">Explorar</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="#sobre">A Lara</a><a href="./ofertas-de-parceiros.html" class="sister-link">Achadinhos da Lívia</a>
-      </nav>
+      </nav><form class="site-search" role="search" action="./ofertas-da-lara.html" method="get"><input name="busca" type="search" maxlength="80" placeholder="Buscar promoção ou produto" aria-label="Buscar produto no catálogo" required><button type="submit" aria-label="Pesquisar">Buscar</button></form>
       <div class="nav-addons">
         <button id="headerSearch" class="header-icon-button" type="button" title="Buscar produtos" aria-label="Buscar produtos">⌕</button>
         <a class="header-link" href="https://www.pinterest.com/joaldosoares/" target="_blank" rel="noopener noreferrer">Nosso Pinterest <span aria-hidden="true">↗</span></a>
@@ -82,11 +84,24 @@
       </div>
     </section>
 
+        <section class="deal-radar shell" id="ofertas-verificadas" aria-labelledby="dealHeading">
+      <div class="deal-title-row">
+        <div><span class="deal-kicker">Radar DELTA · Lívia e Lara</span>
+          <h2 id="dealHeading">Oportunidades com informação verificada</h2>
+          <p>Cupons e mudanças de preço só aparecem quando há dados recentes na fonte. Nunca criamos promoções artificiais.</p>
+        </div>
+        <span id="dealCounter" class="deal-counter" aria-live="polite">Verificando ofertas…</span>
+      </div>
+      <p id="dealStatus" class="deal-status" role="status" aria-live="polite">Conferindo condições atuais no catálogo...</p>
+      <div id="dealCards" class="deal-cards"></div>
+      <div id="dealSearchResults" class="deal-search-preview" aria-live="polite" hidden></div>
+    </section>
+
     <section class="catalog-section" id="catalogo" aria-labelledby="catalog-heading">
       <div class="shell">
         <div class="section-kicker"><span class="eyeline"></span> CURADORIA DELTA</div>
         <div class="section-heading">
-          <div><h2 id="catalog-heading">Encontre o seu próximo achado<span class="heading-dot">.</span></h2><p>Pesquise pelo que você precisa. Os valores, as fotos do anúncio e o vendedor são confirmados no Mercado Livre.</p></div>
+          <div><h2 id="catalog-heading">Encontre o seu próximo achado<span class="heading-dot">.</span></h2><p>Pesquise no catálogo verificado. Valores, frete, cupons e estoque devem ser confirmados no anúncio do Mercado Livre.</p></div>
           <div class="catalog-count" id="catalogCount" aria-live="polite">Carregando catálogo…</div>
         </div>
         <p id="syncStatus" class="sync-status" aria-live="polite">Preparando sincronização do catálogo…</p>
