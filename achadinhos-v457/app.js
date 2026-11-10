@@ -83,6 +83,8 @@
     const label = elem("span", "item-category", product.category || "Outros");
     const title = elem("h3", "", product.title);
     const description = elem("p", "description", product.description || "Confira as especificações e condições no anúncio oficial.");
+    const guide=window.DeltaVisuals?.buyerGuide?.(product);
+    const reason=guide?.who ? elem("p","product-reason","Para quem: "+guide.who.replace(/^Para /,"").replace(/^para /,"")) : null;
     const spacer = elem("div", "product-spacer");
     const notice = elem("div", "price-notice");
     const knownPrice = window.DeltaCatalog.currency(product.price_brl);
@@ -96,7 +98,9 @@
     const details = elem("a","product-detail-link","Ver detalhes do produto →");
     details.href = (config.detailPageUrl || "./produto.html") + "?id=" + encodeURIComponent(product.id);
     details.setAttribute("aria-label","Detalhes de "+product.title);
-    body.append(label,title,description,spacer,notice,details);
+    body.append(label,title,description);
+    if(reason)body.append(reason);
+    body.append(spacer,notice,details);
     if (window.DeltaCommerce) body.append(window.DeltaCommerce.decorateCard(product));
     body.append(link);
     article.append(art,body);

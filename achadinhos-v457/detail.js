@@ -36,11 +36,11 @@ function renderProduct(p){
   const checks=text("div","detail-checks");
   checks.append(text("h2","","Antes de comprar, confira:"));
   const list=document.createElement("ul");
-  for(const item of [
-    "As especificações e a compatibilidade com a sua necessidade",
-    "O vendedor, as avaliações e a política de devolução",
-    "O valor final, as condições, o prazo e o frete no anúncio original"
-  ]) list.append(text("li","",item));
+  const guide=window.DeltaVisuals?.buyerGuide?.(p);
+  if(guide?.who)checks.append(text("p","buyer-fit","Pode ser útil: "+guide.who.replace(/^Para /,"").replace(/^para /,"")));
+  const criteria=guide?.verify || ["Confira as especificações e compatibilidade com sua necessidade"];
+  for(const item of [...criteria,"Confira preço, vendedor, avaliações, frete e devolução no anúncio original"])
+    list.append(text("li","",item));
   checks.append(list);
   copy.append(box,buy,note,checks);layout.append(art,copy);
   root.append(back,layout);

@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="./achadinhos-v457/commerce-v458.css">
   <link rel="stylesheet" href="./achadinhos-v457/realphotos-v460.css">
   <link rel="stylesheet" href="./achadinhos-v457/conversion-v461.css">
+  <link rel="stylesheet" href="./achadinhos-v457/buyer-guide-v463.css">
   <link rel="icon" type="image/svg+xml" href="./achadinhos-v457/favicon.svg">
   <script defer src="./achadinhos-v457/config.js"></script>
   <script defer src="./achadinhos-v457/catalog-loader.js"></script>
@@ -60,35 +61,15 @@
   <main>
     <section class="studio-section shell" id="studioSection" aria-labelledby="studioHeading">
       <div class="studio-section-head">
-        <div><span class="studio-kicker">✦ Seleção da Lívia</span><h2 id="studioHeading">Escolhas da Lívia para você conhecer</h2></div>
-        <p>Veja produtos reais e consulte preço, condições e vendedor diretamente no anúncio oficial.</p>
+        <div class="studio-greeting">
+          <span class="studio-kicker">✦ Oi! Sou a Lívia, apresentadora virtual (IA)</span>
+          <h2 id="studioHeading">O que pode facilitar seu dia?</h2>
+          <p>Comece por cozinha, proteção, beleza ou Wi-Fi. Veja para quem cada produto pode ser útil e decida se vale conferir no Mercado Livre.</p>
+        </div>
+        <img class="studio-avatar" src="./achadinhos-v457/assets/livia_duarte_presenter.jpg" width="68" height="68" alt="Lívia Duarte, apresentadora virtual dos Achadinhos">
       </div>
       <div class="studio-highlights" id="studioHighlights" aria-live="polite" aria-busy="true"><p class="studio-loading">Carregando ofertas com fotografias reais…</p></div>
     </section>
-    <section class="hero shell" aria-labelledby="hero-heading">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="sparkle">✦</span> ACHADOS BEM ESCOLHIDOS, SEM COMPLICAÇÃO</div>
-        <h1 id="hero-heading">Boas escolhas começam com <em>uma boa descoberta.</em></h1>
-        <p>Casa, tecnologia, beleza e mais. A Lívia organiza sugestões úteis para você comparar e conferir diretamente na loja parceira.</p>
-        <div class="hero-actions">
-          <a class="primary-btn" href="#catalogo">Explorar achadinhos <span aria-hidden="true">↘</span></a>
-          <span class="trust-note"><span aria-hidden="true">◎</span> Compra realizada fora deste site</span>
-        </div>
-        <div class="value-badges">
-          <span>✓ Vários nichos</span><span>✓ Links identificados</span><span>✓ Sem preços inventados</span>
-        </div>
-      </div>
-      <div class="hero-visual" id="sobre">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="presenter-frame">
-          <img src="./achadinhos-v457/assets/livia_duarte_presenter.jpg" alt="Retrato da apresentadora virtual Lívia Duarte">
-        </div>
-        <div class="presenter-label"><span class="label-star">✳</span><span><b>Lívia Duarte</b><small>Apresentadora virtual · IA</small></span></div>
-        <div class="floating-tag floating-one">✦ Casa & cozinha</div>
-        <div class="floating-tag floating-two">✦ Tech & acessórios</div>
-      </div>
-    </section>
-
     <section class="category-band shell" aria-label="Categorias de produtos">
       <div class="band-intro"><span class="mini-title">TEM DE TUDO UM POUCO</span><strong>Explore seu próximo achado</strong></div>
       <div class="category-pills" id="categoryPills" aria-label="Filtrar por categoria">
@@ -100,7 +81,7 @@
       <div class="shell">
         <div class="section-kicker"><span class="eyeline"></span> CURADORIA DELTA</div>
         <div class="section-heading">
-          <div><h2 id="catalog-heading">Escolhas para explorar<span class="heading-dot">.</span></h2><p>Confira características e condições no anúncio original antes de comprar.</p></div>
+          <div><h2 id="catalog-heading">Encontre o seu próximo achado<span class="heading-dot">.</span></h2><p>Pesquise pelo que você precisa. Os valores, as fotos do anúncio e o vendedor são confirmados no Mercado Livre.</p></div>
           <div class="catalog-count" id="catalogCount" aria-live="polite">Carregando catálogo…</div>
         </div>
         <p id="syncStatus" class="sync-status" aria-live="polite">Preparando sincronização do catálogo…</p>
@@ -131,8 +112,32 @@
       </div>
     </section>
 
+    <section class="hero shell" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="sparkle">✦</span> ACHADOS BEM ESCOLHIDOS, SEM COMPLICAÇÃO</div>
+        <h1 id="hero-heading">Boas escolhas começam com <em>uma boa descoberta.</em></h1>
+        <p>Casa, tecnologia, beleza e mais. A Lívia organiza sugestões úteis para você comparar e conferir diretamente na loja parceira.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#catalogo">Explorar achadinhos <span aria-hidden="true">↘</span></a>
+          <span class="trust-note"><span aria-hidden="true">◎</span> Compra realizada fora deste site</span>
+        </div>
+        <div class="value-badges">
+          <span>✓ Vários nichos</span><span>✓ Links identificados</span><span>✓ Sem preços inventados</span>
+        </div>
+      </div>
+      <div class="hero-visual" id="sobre">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="presenter-frame">
+          <img src="./achadinhos-v457/assets/livia_duarte_presenter.jpg" alt="Retrato da apresentadora virtual Lívia Duarte">
+        </div>
+        <div class="presenter-label"><span class="label-star">✳</span><span><b>Lívia Duarte</b><small>Apresentadora virtual · IA</small></span></div>
+        <div class="floating-tag floating-one">✦ Casa & cozinha</div>
+        <div class="floating-tag floating-two">✦ Tech & acessórios</div>
+      </div>
+    </section>
+
     <section class="how shell" id="como-funciona">
-      <div class="how-heading"><div class="section-kicker"><span class="eyeline"></span> SIMPLES E TRANSPARENTE</div><h2>Você escolhe. A loja parceira vende.</h2><p>Nós ajudamos a descobrir — o pedido e o pagamento são feitos diretamente no marketplace.</p></div>
+      <div class="how-heading"><div class="section-kicker"><span class="eyeline"></span> SIMPLES E TRANSPARENTE</div><h2>Por que conhecer estes produtos?</h2><p>Organizamos produtos por necessidade e modelo identificável, sem prometer menor preço ou resultado garantido. A compra acontece diretamente no marketplace.</p></div>
       <div class="how-grid">
         <div><span class="how-number">01 / DESCUBRA</span><h3>Encontre algo útil</h3><p>Pesquise por nome ou navegue por categorias.</p></div>
         <div><span class="how-number">02 / CONFIRA</span><h3>Veja o anúncio oficial</h3><p>Verifique preço, vendedor, avaliações, frete e disponibilidade no marketplace.</p></div>

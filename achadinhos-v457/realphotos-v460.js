@@ -73,6 +73,30 @@ function artwork(p,large=false){
  fig.append(top,frame,note,foot);
  return fig;
 }
+/* Evidence-based matching criteria; not product tests, rankings or promotions. */
+const guideById=Object.freeze({
+ "a5f926996780c1":{who:"Para preparar refeições na air fryer",verify:["Confira voltagem e capacidade útil","Meça o espaço disponível na bancada","Confira vendedor, frete e garantia"]},
+ "6f87a43a0e641b":{who:"Para monitorar ambientes com câmera Wi-Fi",verify:["Confira uso interno/externo e alimentação","Veja as opções de gravação e aplicativo","Confira as configurações de privacidade"]},
+ "808a0de1621ea5":{who:"Para secar e modelar cabelos em casa",verify:["Confira tensão elétrica e tomada","Veja acessórios e ajustes disponíveis","Confira orientações de segurança e garantia"]},
+ "8a70cab203d8ed":{who:"Para organizar o Wi-Fi da sua casa",verify:["Confira cobertura e obstáculos do ambiente","Verifique portas e modo de operação","Confirme compatibilidade com seu provedor"]},
+ "71637ee03633f8":{who:"Para distribuir Wi-Fi em vários ambientes",verify:["Verifique quantidade de módulos do kit","Confira portas e compatibilidade do roteador","Considere barreiras e a área a atender"]},
+ "d5f6c3d6232827":{who:"Para ampliar o armazenamento de um PC compatível",verify:["Verifique suporte ao padrão M.2 NVMe","Confira formato e capacidade","Consulte garantia e condições do vendedor"]},
+ "ca04b85b08fa13":{who:"Para perfurações e pequenos reparos",verify:["Confira material a perfurar e potência","Veja acessórios incluídos","Confirme voltagem e equipamentos de proteção"]},
+ "0df53a0fc561e9":{who:"Para limpeza doméstica de pisos e superfícies",verify:["Confira superfícies permitidas","Veja filtros e acessórios incluídos","Confirme tensão, reservatório e garantia"]}
+});
+function buyerGuide(p){
+ const exact=guideById[p?.id];
+ if(exact)return exact;
+ const common=({
+  "Tecnologia":["Verifique compatibilidade e especificações do modelo","Confira conectividade e acessórios"],
+  "Casa":["Confira voltagem, dimensões e capacidade","Veja instruções de limpeza e manutenção"],
+  "Beleza":["Confira composição ou tensão conforme o produto","Veja acessórios e instruções do fabricante"],
+  "Ferramentas":["Confira tensão, potência e acessórios","Verifique os materiais e equipamentos de proteção"],
+  "Automotivo":["Verifique compatibilidade com o veículo","Confira potência, alimentação e segurança"],
+  "Pets":["Confira tamanho e adequação ao seu pet","Veja limpeza, manutenção e peças de reposição"]
+ })[p?.category] || ["Confira o modelo e as especificações","Verifique a adequação à sua necessidade"];
+ return {who:null,verify:[...common,"Compare vendedor, preço, frete e garantia no anúncio"]};
+}
 function chooseSpotlight(products){
  const order=[
  "a5f926996780c1", // Midea air fryer
@@ -107,11 +131,14 @@ function spotlight(products){
   details.append(artwork(p));
   const copy=$("div","studio-highlight-copy");
   copy.append($("span","studio-highlight-kicker",p.category||"Produtos"),
-   $("strong","",p.title),$("span","studio-highlight-more","Ver detalhes →"));
+   $("strong","",p.title));
+  const guide=buyerGuide(p);
+  if(guide.who)copy.append($("span","studio-highlight-benefit",guide.who));
+  copy.append($("span","studio-highlight-more","Ver detalhes e cuidados →"));
   details.append(copy);
   tile.append(details);
   if(p.affiliate_url && /^https:\/\/meli\.la\/[A-Za-z0-9]+$/.test(p.affiliate_url)){
-    const buy=$("a","studio-highlight-buy","Conferir preço ↗");
+    const buy=$("a","studio-highlight-buy","Preço no Mercado Livre ↗");
     buy.href=p.affiliate_url;
     buy.target="_blank";
     buy.rel="sponsored nofollow noopener noreferrer";
@@ -122,5 +149,5 @@ function spotlight(products){
  }
  if(section)section.hidden=selected.length===0;
 }
-window.DeltaVisuals=Object.freeze({artwork,spotlight,actualPhoto,chooseSpotlight});
+window.DeltaVisuals=Object.freeze({artwork,spotlight,actualPhoto,chooseSpotlight,buyerGuide});
 })();

@@ -54,6 +54,8 @@ for name in realphotos-v460.js realphotos-v460.css photo-sources-v460.js photos-
 done
 # Achadinhos da Livia V4.61 conversion-first responsive CSS, no product imagery changes.
 cp "achadinhos-v457/conversion-v461.css" "$OUT/achadinhos-v457/"
+# V4.63: only factual purchase-guidance CSS, no new image sources.
+cp "achadinhos-v457/buyer-guide-v463.css" "$OUT/achadinhos-v457/"
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"
