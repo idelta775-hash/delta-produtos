@@ -46,3 +46,11 @@
  .studio-highlight-benefit{font-size:9px;min-height:35px}
  .studio-highlight-more{font-size:9px}
 }
+
+/* V4.64 — recommendations display model-matched photographs, never emoji product stand-ins. */
+.related-card{padding:10px 10px 14px;overflow:hidden;gap:8px}
+.related-media{height:135px;background:#f8f8f7;border-radius:9px;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.related-media img{width:100%;height:100%;display:block;object-fit:contain}
+.related-no-photo{max-width:190px;color:#63758c;text-align:center;font-size:11px;line-height:1.4;padding:15px}
+.related-card strong,.related-card small{margin:0 4px}
+@media(max-width:430px){.related-media{height:150px}}

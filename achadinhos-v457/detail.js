@@ -51,7 +51,18 @@ function renderRelated(items,main){
   if(!candidates.length){document.querySelector("#relatedSection").hidden=true;return}
   for(const p of candidates){
     const a=link("./produto.html?id="+encodeURIComponent(p.id),"","related-card");
-    a.append(text("span","related-emoji",palette[p.category]||"✦"),text("strong","",p.title),text("small","", "Ver informações →"));
+    const source=window.DeltaVisuals?.actualPhoto(p);
+    const media=text("div","related-media");
+    if(source){
+      const photo=document.createElement("img");
+      photo.src=source.url;photo.alt="Fotografia de referência do modelo "+p.title;
+      photo.loading="lazy";photo.decoding="async";photo.referrerPolicy="no-referrer";
+      photo.onerror=()=>{photo.remove();media.replaceChildren(text("span","related-no-photo","Confira a foto real no anúncio"))};
+      media.append(photo);
+    }else{
+      media.append(text("span","related-no-photo","Foto real no anúncio original"));
+    }
+    a.append(media,text("strong","",p.title),text("small","", "Ver detalhes e cuidados →"));
     related.append(a);
   }
 }
