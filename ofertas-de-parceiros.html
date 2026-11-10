@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="./achadinhos-v457/buyer-compare-v465.css">
   <link rel="stylesheet" href="./achadinhos-v457/dual-v467.css">
   <link rel="stylesheet" href="./achadinhos-v457/deals-v468.css">
+  <link rel="stylesheet" href="./achadinhos-v457/saved-searches-v473.css">
   <link rel="icon" type="image/svg+xml" href="./achadinhos-v457/favicon.svg">
   <script defer src="./achadinhos-v457/config.js"></script>
   <script defer src="./achadinhos-v457/catalog-loader.js"></script>
@@ -34,6 +35,7 @@
   <script defer src="./achadinhos-v457/realphotos-v460.js"></script>
   <script defer src="./achadinhos-v457/buyer-compare-v465.js"></script>
   <script defer src="./achadinhos-v457/deals-v468.js"></script>
+  <script defer src="./achadinhos-v457/saved-searches-v473.js"></script>
   <script defer src="./achadinhos-v457/app.js"></script>
 </head>
 <body>
@@ -95,6 +97,15 @@
       <div id="dealSearchResults" class="deal-search-preview" aria-live="polite" hidden></div>
     </section>
 
+    <section class="saved-queries shell" id="savedQueries" aria-labelledby="savedQueriesHeading" hidden>
+      <div class="saved-queries-head">
+        <h2 id="savedQueriesHeading">Suas buscas acompanhadas</h2>
+        <button type="button" id="clearSavedQueries" class="saved-clear">Apagar buscas salvas</button>
+      </div>
+      <p id="savedQueriesNote">Salvas somente neste navegador. Confira novamente quando quiser; não enviamos alertas.</p>
+      <div id="savedQueriesList" class="saved-queries-list" aria-live="polite"></div>
+    </section>
+
     <section class="catalog-section" id="catalogo" aria-labelledby="catalog-heading">
       <div class="shell">
         <div class="section-kicker"><span class="eyeline"></span> CURADORIA DELTA</div>
@@ -126,7 +137,7 @@
           <div class="loading">Preparando a seleção de produtos…</div>
         </div>
         <div class="load-more-wrap"><button class="more-btn" id="moreBtn" hidden>Mostrar mais produtos <span aria-hidden="true">↓</span></button></div>
-        <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>Nada encontrado por aqui</h3><p>Tente outro termo ou explore todas as categorias.</p><button id="resetBtn">Ver todos os produtos</button></div>
+        <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>Nada encontrado por aqui</h3><p>Tente outro termo ou explore todas as categorias.</p><button id="resetBtn">Ver todos os produtos</button><button class="save-query-action" type="button" id="saveSearchBtn" hidden>Guardar esta busca</button><p class="saved-query-feedback" id="savedQueriesFeedback" role="status" aria-live="polite"></p></div>
       </div>
     </section>
 

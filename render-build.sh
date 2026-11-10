@@ -70,6 +70,10 @@ done
 for name in deals-v468.js deals-v468.css; do
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
+# V4.73: optional saved searches (localStorage only), no customer API or telemetry.
+for name in saved-searches-v473.js saved-searches-v473.css; do
+  cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
+done
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"

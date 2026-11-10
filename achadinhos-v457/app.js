@@ -68,9 +68,10 @@
   }
   function visibleProducts() {
     const q = normalize(state.query.trim());
+    const terms=q.split(/\s+/).filter(Boolean);
     const filtered = state.products.filter(p =>
       allowedCategory(p) && (!window.DeltaCommerce || window.DeltaCommerce.matches(p)) && (state.category === "Todos" || p.category === state.category) &&
-      (!q || normalize([p.title, p.category, p.description, p.subtitle, p.group].join(" ")).includes(q))
+      (!q || terms.every(term => normalize([p.title, p.category, p.description, p.subtitle, p.group].join(" ")).includes(term)))
     );
     if (state.sort === "az") filtered.sort((a,b)=>a.title.localeCompare(b.title,"pt-BR"));
     if (state.sort === "featured") filtered.sort((a,b)=>Number(Boolean(b.featured))-Number(Boolean(a.featured)));
@@ -119,6 +120,7 @@
     more.hidden = products.length <= state.visible;
     if (products.length === 0) grid.append(elem("p", "loading", "Sua busca não encontrou produtos nesta seleção."));
     if(window.DeltaVisuals) window.DeltaVisuals.spotlight(state.products.filter(allowedCategory));
+    window.DeltaSavedQueries?.onRender(state.query,products.length);
   }
   async function init() {
     try {
@@ -133,6 +135,7 @@
       window.DeltaCompare?.updateCatalog(state.products);
       if(search && state.query)search.value=state.query;
       window.DeltaDeals?.update(state.products);
+      window.DeltaSavedQueries?.updateCatalog(state.products);
       window.DeltaDeals?.search(state.query);
       const canFilterPrice=state.products.some(p=>Number.isFinite(p.price_brl));
       const filterButton=$("priceFilterToggle");
