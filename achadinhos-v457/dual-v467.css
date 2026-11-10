@@ -1,0 +1,20 @@
+/* DELTA Affiliate V4.67 — shared product UI; both presenters, one store.
+   Compact two-column catalog at common mobile widths; no generated product visuals. */
+@media (min-width:360px) and (max-width:760px) {
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .product-card .real-photo-art{height:158px}
+  .product-card .studio-topline{height:29px;font-size:8px;padding:0 7px}
+  .product-card .studio-footer{height:29px;padding:0 7px}
+  .product-card .studio-category,.product-card .studio-disclosure{font-size:8px}
+  .product-card .studio-photo-frame{padding:7px}
+  .product-card .studio-photo-label{bottom:31px;font-size:8px}
+  .product-card .product-body{padding:11px}
+  .product-card .product-body h3{font-size:13px;line-height:1.38;min-height:0}
+  .product-card .product-body .description{font-size:11px;line-height:1.35;min-height:0}
+  .product-card .price-notice{font-size:10px;line-height:1.4}
+  .product-card .product-detail-link{font-size:11px;line-height:1.25}
+  .product-card .item-cta{font-size:11px;line-height:1.3;padding:9px 8px;min-height:50px}
+  .product-card .commerce-card-tools{gap:4px}
+  .product-card .share-product{font-size:10px;padding:7px 4px}
+  .product-card .favorite-toggle{min-width:44px;min-height:44px}
+}

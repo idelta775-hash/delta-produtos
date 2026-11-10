@@ -22,7 +22,7 @@ const make=(tag,cls,text)=>{
 };
 const money=x=>Number.isFinite(x)?new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(x):"";
 function productPage(p){
- const url=new URL("produto.html",prefix+"/");
+ const url=new URL(window.DELTA_STORE_CONFIG?.detailPageUrl || "produto.html",prefix+"/");
  url.searchParams.set("id",p.id);
  return url.href;
 }
@@ -69,7 +69,7 @@ function shareButton(p){
  btn.type="button";btn.setAttribute("aria-label","Compartilhar página de "+p.title+" no WhatsApp");
  btn.addEventListener("click",()=>{
    const link=productPage(p);
-   const msg="Olha esta indicação da Lívia: "+p.title+". Confira os detalhes e o anúncio original aqui: "+link+" (site com links de afiliado).";
+   const msg="Olha esta indicação da "+(window.DELTA_PRESENTER_PROFILE?.name||"Lívia")+": "+p.title+". Confira os detalhes e o anúncio original aqui: "+link+" (site com links de afiliado).";
    const url="https://api.whatsapp.com/send?text="+encodeURIComponent(msg);
    window.open(url,"_blank","noopener,noreferrer");
  });

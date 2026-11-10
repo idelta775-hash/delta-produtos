@@ -2,6 +2,7 @@
 (() => {
 "use strict";
 const config=window.DELTA_STORE_CONFIG||{};
+const allowEditorialOverride=window.DELTA_PRESENTER_PROFILE?.id!=="lara";
 const $=id=>document.getElementById(id);
 const clean=(s,n=200)=>String(s??"").replace(/\s+/g," ").trim().slice(0,n);
 async function rows(url) {
@@ -18,20 +19,20 @@ async function load() {
     const [shop,cat]=await Promise.all([rows(config.storeFeedUrl),rows(config.categoryFeedUrl)]);
     const settings=Object.fromEntries(shop.map(r=>[clean(r.chave,70),clean(r.valor,300)]).filter(x=>x[0]));
     const title=$("hero-heading");
-    if(title&&settings.titulo_abertura&&settings.titulo_realce){
+    if(allowEditorialOverride&&title&&settings.titulo_abertura&&settings.titulo_realce){
       const strong=document.createElement("em");strong.textContent=settings.titulo_realce;
       title.replaceChildren(document.createTextNode(settings.titulo_abertura+" "),strong);
     }
     const hero=document.querySelector(".hero-copy>p");
-    if(hero&&settings.texto_destaque)hero.textContent=settings.texto_destaque;
+    if(allowEditorialOverride&&hero&&settings.texto_destaque)hero.textContent=settings.texto_destaque;
     const btn=document.querySelector(".hero-copy .primary-btn");
-    if(btn&&settings.botao_destaque)btn.replaceChildren(document.createTextNode(settings.botao_destaque+" ↘"));
+    if(allowEditorialOverride&&btn&&settings.botao_destaque)btn.replaceChildren(document.createTextNode(settings.botao_destaque+" ↘"));
     const heading=$("catalog-heading");
-    if(heading&&settings.titulo_catalogo)heading.textContent=settings.titulo_catalogo;
+    if(allowEditorialOverride&&heading&&settings.titulo_catalogo)heading.textContent=settings.titulo_catalogo;
     const band=document.querySelector(".band-intro strong");
-    if(band&&settings.chamada_categorias)band.textContent=settings.chamada_categorias;
+    if(allowEditorialOverride&&band&&settings.chamada_categorias)band.textContent=settings.chamada_categorias;
     const footer=document.querySelector(".footer-inner>p");
-    if(footer&&settings.rodape_slogan)footer.textContent=settings.rodape_slogan;
+    if(allowEditorialOverride&&footer&&settings.rodape_slogan)footer.textContent=settings.rodape_slogan;
     const categoryMeta={};
     for (const row of cat) {
       const name=clean(row.categoria,60);

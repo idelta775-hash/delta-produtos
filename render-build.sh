@@ -8,7 +8,7 @@ TARGET_BASE="${RENDER_EXTERNAL_URL%/}/"
 OUT="./render-dist"
 rm -rf "$OUT"
 mkdir -p "$OUT/assets"
-for name in ofertas-de-parceiros.html produto.html index.html sistemas.html resposta-orcamento-gratis.html precificador.html celebre-junto.html conversa-pro.html conversa-demo-gratis.html caixa-em-ordem.html roteiros-originais.html roteiros-demo-gratis.html artes-pro.html modelos-atendimento-whatsapp.html calculadora-roi-gratis.html amostra-etiqueta-gratis.html guia-precificacao-automacao.html guia-festa-imprimivel.html reels-barber-pro.html ecossistema-sistemas.html guia-ia-negocios.html diagnostico-negocios.html systeme-io-negocios.html; do
+for name in ofertas-de-parceiros.html ofertas-da-lara.html produto.html produto-lara.html index.html sistemas.html resposta-orcamento-gratis.html precificador.html celebre-junto.html conversa-pro.html conversa-demo-gratis.html caixa-em-ordem.html roteiros-originais.html roteiros-demo-gratis.html artes-pro.html modelos-atendimento-whatsapp.html calculadora-roi-gratis.html amostra-etiqueta-gratis.html guia-precificacao-automacao.html guia-festa-imprimivel.html reels-barber-pro.html ecossistema-sistemas.html guia-ia-negocios.html diagnostico-negocios.html systeme-io-negocios.html; do
   cp "$name" "$OUT/$name"
 done
 for name in style.css roi-gratis.js conversa-demo.js roteiros-demo.js roteiros-demo.css robots.txt sitemap.xml; do
@@ -60,6 +60,12 @@ cp "achadinhos-v457/buyer-guide-v463.css" "$OUT/achadinhos-v457/"
 for name in buyer-compare-v465.js buyer-compare-v465.css; do
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
+# V4.67 dual presenters — shared audited catalog and exact affiliate URLs.
+cp "achadinhos-v457/dual-v467.css" "$OUT/achadinhos-v457/"
+for name in presenter-lara-v467.js lara-v467.css favicon-lara-v467.svg; do
+  cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
+done
+
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"

@@ -11,8 +11,8 @@ const palette={"Tecnologia":"💻","Casa":"🏠","Beleza":"✨","Pets":"🐾","F
 function safeId(v){return typeof v==="string"&&/^[A-Za-z0-9_-]{6,80}$/.test(v)}
 function renderProduct(p){
   root.replaceChildren();
-  document.title=p.title+" | Achadinhos da Lívia";
-  const back=link("./ofertas-de-parceiros.html","← Voltar para os achadinhos","back-link");
+  document.title=p.title+" | "+(config.brand||"Achadinhos da Lívia");
+  const back=link(config.homePageUrl||"./ofertas-de-parceiros.html","← Voltar para os achadinhos","back-link");
   const layout=text("div","detail-layout");
   const art=text("div","detail-art");
   if(window.DeltaVisuals) art.append(window.DeltaVisuals.artwork(p,true));

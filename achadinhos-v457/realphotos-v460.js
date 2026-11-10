@@ -36,7 +36,7 @@ function artwork(p,large=false){
  const fig=$("figure","studio-art real-photo-art"+(large?" studio-art-large":""));
  fig.dataset.productId=p?.id||"";
  const top=$("div","studio-topline");
- top.append($("span","studio-logo","✦ ACHADINHOS DA LÍVIA"),$("span","studio-gold-dot","✦"));
+ top.append($("span","studio-logo","✦ ACHADINHOS DA "+(window.DELTA_PRESENTER_PROFILE?.name||"LÍVIA").toUpperCase()),$("span","studio-gold-dot","✦"));
  const frame=$("div","studio-photo-frame");
  const source=actualPhoto(p);
  if(source){
@@ -126,7 +126,7 @@ function spotlight(products){
  for(const p of selected){
   const tile=$("article","studio-highlight-tile");
   const details=$("a","studio-highlight-detail");
-  details.href="./produto.html?id="+encodeURIComponent(p.id);
+  details.href=(window.DELTA_STORE_CONFIG?.detailPageUrl||"./produto.html")+"?id="+encodeURIComponent(p.id);
   details.setAttribute("aria-label","Ver detalhes e fotografias de "+p.title);
   details.append(artwork(p));
   const copy=$("div","studio-highlight-copy");

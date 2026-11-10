@@ -1,0 +1,52 @@
+/* V4.67 — identidade Lara. Não altera recursos e fotografia dos produtos. */
+:root{--blue:#a548cb;--cyan:#d884e8;--gold:#f0c3e9;--page:#fcf9fe;--navy:#32194a;--ink:#2d2040;--edge:#ebdeef}
+body{background:var(--page)}
+.topline{background:#442258;color:#fff0fa}
+.topline-dot{background:#ffa9d7;box-shadow:0 0 10px #f9c0e3}
+.brand-mark{background:linear-gradient(145deg,#e72a90,#8248d0);color:#fff}
+.header{border-color:#f1def2}
+.header .sister-link{color:#a139a2}
+.header-link{border-color:#ead6ef;color:#8632a2}
+.header-link:hover{border-color:#b35cd5;color:#942ba9}
+.studio-section{background:linear-gradient(160deg,#fff8fd,#f6eeff);border-color:#ead7eb}
+.studio-kicker{color:#b1348a}
+.studio-section-head h2{color:#351c48}
+.studio-avatar.lara-initial{display:grid;place-items:center;background:linear-gradient(150deg,#ee449b,#ad60d8);border-radius:50%;height:68px;width:68px;color:white;font-size:39px;font-weight:900;box-shadow:0 8px 22px #bb4bb53d}
+.studio-highlight-tile{border-color:#eed8e7}
+.studio-highlight-kicker{color:#a33a93}
+.studio-topline{background:#5b2868;border-color:#ecacdb;color:#ffeafb}
+.studio-footer{background:#56295e;border-color:#ebaee0;color:#fff1f9}
+.studio-gold-dot{color:#ffb8e3}
+.studio-highlight-buy{background:#9135a5;border-color:#d99cdb}
+.studio-highlight-buy:hover{background:#7830a4}
+.category-band{border-color:#eadcec}
+.cat-btn[aria-pressed=true]{background:#f9e9fb;border-color:#dc98e2;color:#863497}
+.mini-title,.section-kicker,.heading-dot{color:#a03bbb}
+.eyeline{background:#ad48be}
+.search-box:focus-within{outline-color:#bf70ce}
+.product-card{border-color:#eadbe8}
+.product-card .item-category{color:#a93b90}
+.product-card .item-cta{background:#8c3ba8;border-color:#d8a3d8}
+.product-card .item-cta:hover{background:#6f2490}
+.product-card .product-detail-link{color:#9140a3}
+.hero{background:radial-gradient(circle at 85% 25%,#b152bf66,transparent 36%),linear-gradient(130deg,#32163d,#703a87);color:white}
+.hero h1 em{color:#ffc6e6}
+.hero .eyebrow{color:#fad3ef}
+.hero-visual .presenter-frame{background:linear-gradient(145deg,#b46ac9,#eeb7dc);display:grid;place-items:center;border-color:#ffffff60}
+.lara-portrait-initial{font-size:clamp(160px,19vw,260px);font-weight:850;color:#ffebfb;line-height:1;text-shadow:0 16px 50px #84237d4d}
+.presenter-label{color:#4e215a}
+.label-star{color:#ac3fb9}
+.primary-btn{background:#ffcbe7;color:#482452}
+.primary-btn:hover{background:#ffe4f2}
+.floating-tag{color:#642e79}
+.disclosure{background:#f7eafa;border-color:#ead5ef;color:#644470}
+.footer{background:#2a173b}
+.footer-logo .brand-mark{background:linear-gradient(135deg,#b744aa,#7440ab)}
+.price-notice{background:#fcf7fb!important}
+.detail-buy{background:#8934a0}
+.detail-buy:hover{background:#72298f}
+@media(max-width:760px){
+ .header .sister-link{display:none}
+ .studio-avatar.lara-initial{height:46px;width:46px;font-size:29px;float:right}
+ .hero-visual .presenter-frame{width:230px}
+}
