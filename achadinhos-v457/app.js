@@ -93,7 +93,7 @@
     link.rel = "sponsored nofollow noopener noreferrer";
     link.setAttribute("aria-label", "Conferir " + product.title + " no Mercado Livre");
     link.append(elem("span", "", "Conferir no " + product.marketplace), elem("span", "external", "↗"));
-    const details = elem("a","product-detail-link","Ver detalhes, condições e cuidados de compra →");
+    const details = elem("a","product-detail-link","Ver detalhes do produto →");
     details.href = (config.detailPageUrl || "./produto.html") + "?id=" + encodeURIComponent(product.id);
     details.setAttribute("aria-label","Detalhes de "+product.title);
     body.append(label,title,description,spacer,notice,details);
@@ -123,6 +123,16 @@
         return true;
       });
       applyMetadata();
+      const canFilterPrice=state.products.some(p=>Number.isFinite(p.price_brl));
+      const filterButton=$("priceFilterToggle");
+      if(filterButton){
+        filterButton.hidden=!canFilterPrice;
+        if(!canFilterPrice){
+          const panel=$("priceFilters");
+          if(panel)panel.hidden=true;
+          filterButton.setAttribute("aria-expanded","false");
+        }
+      }
       if(state.category !== "Todos" && !state.products.some(p => allowedCategory(p) && p.category===state.category)) state.category = "Todos";
       categoryButtons();
       render();
@@ -133,6 +143,8 @@
       grid.replaceChildren(elem("p", "loading", "O catálogo está temporariamente indisponível. Atualize a página ou tente novamente mais tarde."));
       count.textContent = "Não foi possível carregar";
       pills.replaceChildren();
+      const studio=$("studioSection");
+      if(studio)studio.hidden=true;
       console.error("Falha no catálogo:", err.message);
     }
   }

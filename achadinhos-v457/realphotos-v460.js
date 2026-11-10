@@ -99,15 +99,25 @@ function spotlight(products){
  root.replaceChildren();
  const selected=chooseSpotlight(products);
  for(const p of selected){
-  const link=$("a","studio-highlight-tile");
-  link.href="./produto.html?id="+encodeURIComponent(p.id);
-  link.setAttribute("aria-label","Ver detalhes de "+p.title);
-  link.append(artwork(p));
+  const tile=$("article","studio-highlight-tile");
+  const details=$("a","studio-highlight-detail");
+  details.href="./produto.html?id="+encodeURIComponent(p.id);
+  details.setAttribute("aria-label","Ver detalhes e fotografias de "+p.title);
+  details.append(artwork(p));
   const copy=$("div","studio-highlight-copy");
   copy.append($("span","studio-highlight-kicker",p.category||"Produtos"),
-   $("strong","",p.title),$("span","studio-highlight-more","Conhecer o produto ↗"));
-  link.append(copy);
-  root.append(link);
+   $("strong","",p.title),$("span","studio-highlight-more","Ver detalhes →"));
+  details.append(copy);
+  tile.append(details);
+  if(p.affiliate_url && /^https:\/\/meli\.la\/[A-Za-z0-9]+$/.test(p.affiliate_url)){
+    const buy=$("a","studio-highlight-buy","Conferir preço ↗");
+    buy.href=p.affiliate_url;
+    buy.target="_blank";
+    buy.rel="sponsored nofollow noopener noreferrer";
+    buy.setAttribute("aria-label","Conferir preço e condições de "+p.title+" no Mercado Livre");
+    tile.append(buy);
+  }
+  root.append(tile);
  }
  if(section)section.hidden=selected.length===0;
 }

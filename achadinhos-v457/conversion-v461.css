@@ -1,0 +1,119 @@
+/* V4.61 — comércio primeiro. Fotos reais da V4.60 preservadas. */
+.studio-section{margin-top:14px;margin-bottom:12px;padding:19px 20px 20px}
+.studio-section-head{margin-bottom:13px;align-items:center}
+.studio-section-head h2{font-size:clamp(19px,2.1vw,26px);margin:2px 0 0}
+.studio-section-head p{font-size:12px;max-width:360px}
+.studio-highlights{gap:12px}
+.studio-highlight-tile{overflow:hidden}
+.studio-highlight-detail{display:flex;flex-direction:column;flex:1;text-decoration:none;color:inherit;min-width:0}
+.studio-highlight-detail:hover .studio-highlight-more{text-decoration:underline}
+.studio-highlight-buy{background:#132849;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;
+ text-align:center;min-height:46px;margin:0 10px 10px;padding:9px 11px;border-radius:10px;
+ border:1px solid #c7a563;font-size:11px;font-weight:850;line-height:1.25}
+.studio-highlight-buy:hover,.studio-highlight-buy:focus-visible{background:#1b5b94;outline-offset:2px}
+.studio-highlight-buy:focus-visible,.studio-highlight-detail:focus-visible{outline:3px solid #3f92e2}
+.studio-highlight-copy{gap:5px;padding:9px 12px 10px}
+.studio-highlight-copy strong{font-size:12px;line-height:1.35}
+.studio-highlight-more{font-size:10px}
+.studio-highlight-tile .studio-art{height:155px}
+.studio-highlight-tile .studio-photo-frame{padding:7px}
+.studio-highlight-tile .studio-topline{height:34px}
+.hero{margin-top:12px;min-height:325px;padding:30px 38px;border-radius:22px}
+.hero h1{font-size:clamp(30px,3.3vw,47px);line-height:1.1;margin:10px 0}
+.hero-copy>p{font-size:13px;line-height:1.45;margin:9px 0}
+.hero-actions{margin-top:13px}
+.hero-visual{min-height:245px}
+.presenter-frame{height:320px;width:255px;bottom:-34px}
+.orbit-one{height:280px;width:280px}
+.orbit-two{height:350px;width:350px}
+.value-badges{margin-top:10px;gap:5px}
+.category-band{margin-top:12px;padding:15px 20px}
+.catalog-section{padding-top:28px}
+.section-heading{margin-bottom:14px}
+.toolbar{margin-bottom:15px}
+.commerce-tools{margin-bottom:12px}
+.commerce-card-tools .favorite-toggle{min-width:44px;min-height:44px;display:grid;place-items:center}
+.commerce-card-tools .share-product{min-height:44px}
+.product-detail-link{min-height:44px;display:flex;align-items:center}
+.product-card .item-cta{min-height:48px}
+.studio-highlight-detail .studio-art:hover .actual-product-photo{transform:scale(1.03)}
+@media(max-width:1090px){.studio-highlight-tile .studio-art{height:150px}}
+@media(max-width:760px){
+ .studio-section{margin-top:9px;padding:10px 10px 11px;border-radius:15px}
+ .studio-section-head{display:block;margin:0 0 10px}
+ .studio-kicker{font-size:9px}
+ .studio-section-head h2{font-size:20px;line-height:1.17;margin:4px 0}
+ .studio-section-head p{font-size:10px;line-height:1.35;max-width:none;margin:2px 0}
+ .studio-highlights{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .studio-highlight-tile{border-radius:12px}
+ .studio-highlight-tile .studio-art{height:180px}
+ .studio-highlight-tile .studio-topline{height:26px;padding:0 6px;font-size:7px}
+ .studio-highlight-tile .studio-gold-dot{font-size:12px}
+ .studio-highlight-tile .studio-footer{height:23px}
+ .studio-highlight-tile .studio-photo-label{bottom:25px}
+ .studio-highlight-copy{padding:7px 8px 5px;gap:3px}
+ .studio-highlight-kicker{font-size:9px}
+ .studio-highlight-copy strong{font-size:11px;min-height:31px}
+ .studio-highlight-more{font-size:10px}
+ .studio-highlight-buy{min-height:44px;margin:3px 7px 7px;padding:7px 4px;font-size:10px;line-height:1.2;border-radius:9px}
+ .hero{display:flex;flex-direction:row;align-items:center;gap:10px;margin-top:9px;padding:16px 15px;border-radius:16px;min-height:0}
+ .hero-copy{flex:1;min-width:0}
+ .hero h1{font-size:clamp(23px,5.6vw,31px);letter-spacing:-.8px;margin:6px 0}
+ .hero .eyebrow{font-size:8px;letter-spacing:.08em}
+ .hero .sparkle{font-size:12px}
+ .hero-copy>p{font-size:11px;line-height:1.4}
+ .hero-actions{margin-top:8px;gap:5px}
+ .hero .primary-btn{font-size:11px;padding:9px 10px;gap:5px;border-radius:9px}
+ .hero .trust-note,.hero .value-badges,.hero .floating-tag,.hero .orbit,.hero .presenter-label{display:none!important}
+ .hero-visual{min-height:0;width:88px;height:104px;flex:none;align-self:center;margin:0}
+ .hero .presenter-frame{position:relative;inset:auto;width:88px;height:104px;border-radius:45px 45px 13px 13px;border:2px solid #ffffff55}
+ .category-band{padding:11px;margin-top:10px}
+ .band-intro{margin-bottom:8px}
+ .catalog-section{padding:21px 0 38px}
+ .section-heading{margin:3px 0 12px}
+ .section-heading h2{font-size:24px}
+ .toolbar{gap:9px;margin-bottom:12px}
+ .product-card .description{display:-webkit-box;-webkit-line-clamp:2;min-height:0;margin-bottom:9px}
+ .product-body{padding:14px}
+ .product-card .item-cta{font-size:12px}
+ .product-card .product-detail-link{font-size:12px}
+ .commerce-tools small{font-size:10px}
+}
+@media(max-width:430px){
+ .grid{grid-template-columns:1fr;gap:15px}
+ .product-card .real-photo-art{height:238px}
+ .product-card .studio-photo-frame{padding:15px}
+ .product-card .studio-topline{height:36px;font-size:10px}
+ .product-card .studio-footer{height:34px}
+ .product-card .studio-category{font-size:11px}
+ .product-card .studio-disclosure{font-size:9px}
+ .product-card .studio-photo-label{bottom:38px;font-size:9px}
+ .product-body{padding:16px 18px}
+ .product-card .product-body h3{font-size:17px;min-height:0;margin:6px 0 8px}
+ .product-card .description{font-size:12px;min-height:0;margin-bottom:8px}
+ .product-card .item-category{font-size:11px}
+ .product-card .price-notice{font-size:12px}
+ .product-card .product-detail-link{min-height:44px}
+ .product-card .item-cta{font-size:13px;padding:11px 14px}
+ .studio-section-head h2{font-size:19px}
+ .studio-highlight-tile .studio-photo-label{font-size:7px}
+ .studio-highlight-tile .studio-topline{font-size:7px}
+ .studio-highlight-tile .studio-disclosure{font-size:6px}
+}
+@media(max-width:350px){
+ .studio-highlight-tile .studio-art{height:155px}
+ .studio-highlight-tile .studio-topline{height:24px}
+ .studio-highlight-copy strong{font-size:10px}
+ .studio-highlight-buy{font-size:9px}
+ .hero-visual{width:65px;height:90px}
+ .hero .presenter-frame{width:65px;height:90px}
+ .hero h1{font-size:21px}
+}
+
+/* Keep commerce section sized during Google Sheets loading, preventing layout jumps. */
+.studio-highlights:has(.studio-loading){min-height:290px}
+.studio-loading{grid-column:1/-1;display:grid;place-items:center;margin:0;border:1px dashed #d9cfbe;
+ border-radius:12px;background:#fffdf9;color:#64718a;font-size:13px;font-weight:650;text-align:center;padding:22px}
+@media(max-width:1090px){.studio-highlights:has(.studio-loading){min-height:610px}}
+@media(max-width:760px){.studio-highlights:has(.studio-loading){min-height:620px}}
+@media(max-width:350px){.studio-highlights:has(.studio-loading){min-height:585px}}
