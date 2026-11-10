@@ -80,7 +80,7 @@ function detailCard(p){
   "Preço observado: "+window.DeltaCatalog.currency(p.price_brl)+" · confirme no anúncio":
   "Preço atual: consultar no Mercado Livre");
  const detail=e("a","compare-detail","Ver detalhes no Achadinhos");
- detail.href="./produto.html?id="+encodeURIComponent(p.id);
+ detail.href=(window.DELTA_STORE_CONFIG?.detailPageUrl||"./produto.html")+"?id="+encodeURIComponent(p.id);
  const buy=e("a","compare-market","Conferir no Mercado Livre ↗");
  buy.href=p.affiliate_url;buy.target="_blank";buy.rel="sponsored nofollow noopener noreferrer";
  buy.setAttribute("aria-label","Ver preço e condições de "+p.title+" no Mercado Livre");
