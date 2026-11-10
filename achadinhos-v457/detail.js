@@ -50,7 +50,7 @@ function renderRelated(items,main){
   const candidates=items.filter(x=>x.id!==main.id&&x.category===main.category).slice(0,4);
   if(!candidates.length){document.querySelector("#relatedSection").hidden=true;return}
   for(const p of candidates){
-    const a=link("./produto.html?id="+encodeURIComponent(p.id),"","related-card");
+    const a=link((config.detailPageUrl||"./produto.html")+"?id="+encodeURIComponent(p.id),"","related-card");
     const source=window.DeltaVisuals?.actualPhoto(p);
     const media=text("div","related-media");
     if(source){
@@ -77,7 +77,7 @@ async function main(){
     document.dispatchEvent(new CustomEvent("delta:detail-ready",{detail:{product:p}}));
     document.querySelector("#syncStatus").textContent=data.source==="google_sheets"?"Informações sincronizadas com o catálogo":"Catálogo de segurança — confirme os detalhes no marketplace";
   }catch(e){
-    root.replaceChildren(text("h1","","Produto indisponível"),text("p","","Este produto pode ter sido removido ou pausado na nossa curadoria."),link("./ofertas-de-parceiros.html","Voltar à vitrine","detail-buy"));
+    root.replaceChildren(text("h1","","Produto indisponível"),text("p","","Este produto pode ter sido removido ou pausado na nossa curadoria."),link(config.homePageUrl||"./ofertas-de-parceiros.html","Voltar à vitrine","detail-buy"));
     document.querySelector("#relatedSection").hidden=true;
   }
 }
