@@ -73,6 +73,31 @@ function purchaseJourney() {
   sec.append(text("p","delta-purchase-clarification","A DELTA apresenta recomendações e links de afiliado. Não recebe pagamentos neste site e não é a vendedora do produto. Podemos receber comissão por compras elegíveis."));
   return sec;
 }
+function mountMobilePurchaseShortcut(p,buy) {
+  // Original and duplicate CTA use the SAME confirmed affiliate link.
+  // No automatic navigation, tracking, click simulation or invented discount.
+  const bar=text("aside","delta-mobile-purchase-v490");
+  bar.setAttribute("aria-label","Atalho de compra voluntária");
+  const notice=text("span","delta-mobile-purchase-note-v490",
+    "Publicidade · Confira preço, vendedor e frete no anúncio original.");
+  const cta=link(p.affiliate_url,"Ver no "+p.marketplace+" ↗",
+    "delta-mobile-purchase-button-v490");
+  cta.target="_blank";
+  cta.rel="sponsored nofollow noopener noreferrer";
+  cta.setAttribute("aria-label","Abrir voluntariamente o anúncio deste produto em "+p.marketplace);
+  bar.append(notice,cta);
+  root.append(bar);
+  const body=document.body;
+  body.classList.add("delta-mobile-purchase-active-v490");
+  if(typeof IntersectionObserver==="function"){
+    const watcher=new IntersectionObserver(entries=>{
+      const visible=entries.some(entry=>entry.isIntersecting);
+      bar.classList.toggle("is-inactive-v490",visible);
+      body.classList.toggle("delta-mobile-purchase-active-v490",!visible);
+    },{threshold:.15});
+    watcher.observe(buy);
+  }
+}
 function renderProduct(p){
   root.replaceChildren();
   document.title=p.title+" | "+(config.brand||"Achadinhos da Lívia");
@@ -108,6 +133,7 @@ function renderProduct(p){
   checks.append(list);
   copy.append(box,buy,shareBox(p),note,purchaseJourney(),checks);layout.append(art,copy);
   root.append(back,layout);
+  mountMobilePurchaseShortcut(p,buy);
 }
 function renderRelated(items,main){
   related.replaceChildren();

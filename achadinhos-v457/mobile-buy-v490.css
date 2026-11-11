@@ -1,0 +1,21 @@
+/* V4.90 — only mobile product-detail pages; voluntary original-link shortcut. */
+.delta-mobile-purchase-v490{display:none}
+@media(max-width:760px){
+ body.delta-mobile-purchase-active-v490{padding-bottom:100px}
+ .delta-mobile-purchase-v490{position:fixed;left:0;right:0;bottom:0;z-index:45;display:flex;
+  align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 12px max(10px,env(safe-area-inset-bottom));background:#fff;color:#1d2940;
+  border-top:1px solid #dbe3f0;box-shadow:0 -7px 24px rgba(15,25,45,.14)}
+ .delta-mobile-purchase-v490.is-inactive-v490{display:none}
+ .delta-mobile-purchase-note-v490{flex:1;min-width:0;font-size:11px;
+  font-weight:600;line-height:1.38}
+ .delta-mobile-purchase-button-v490{display:flex;align-items:center;justify-content:center;
+  flex:0 0 49%;min-height:48px;padding:10px 12px;border-radius:11px;background:#173c6f;
+  color:#fff;font-size:12px;font-weight:800;line-height:1.25;text-align:center;text-decoration:none}
+ .delta-mobile-purchase-button-v490:hover{background:#24548e}
+ .delta-mobile-purchase-button-v490:focus-visible{outline:3px solid #c99c34;outline-offset:3px}
+}
+@media(max-width:350px){
+ .delta-mobile-purchase-note-v490{font-size:10px}
+ .delta-mobile-purchase-button-v490{flex-basis:51%;font-size:11px}
+}
