@@ -62,6 +62,10 @@ for name in buyer-compare-v465.js buyer-compare-v465.css; do
 done
 # V4.67 dual presenters — shared audited catalog and exact affiliate URLs.
 cp "achadinhos-v457/dual-v467.css" "$OUT/achadinhos-v457/"
+# V4.92: only approved Lara Viana canonical public avatar and appearance CSS.
+cp "achadinhos-v457/lara-canonical-v492.css" "$OUT/achadinhos-v457/"
+cp "achadinhos-v457/assets/lara-viana-canonica-v492.webp" "$OUT/achadinhos-v457/assets/"
+cp "achadinhos-v457/assets/lara-viana-canonica-v492.png" "$OUT/achadinhos-v457/assets/"
 for name in presenter-lara-v467.js lara-v467.css favicon-lara-v467.svg; do
   cp "achadinhos-v457/$name" "$OUT/achadinhos-v457/$name"
 done
