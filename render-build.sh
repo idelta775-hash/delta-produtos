@@ -85,6 +85,8 @@ cp achadinhos-v457/owned-social-v475/*.jpg "$OUT/achadinhos-v457/owned-social-v4
 cp "achadinhos-v457/purchase-trust-v480.css" "$OUT/achadinhos-v457/"
 # V4.90 voluntary mobile purchase shortcut; copy audited CSS only.
 cp "achadinhos-v457/mobile-buy-v490.css" "$OUT/achadinhos-v457/"
+# V4.91: reduce whitespace only for missing images on product pages.
+cp "achadinhos-v457/no-photo-mobile-v491.css" "$OUT/achadinhos-v457/"
 # V4.79: user-initiated product sharing on both presenter detail pages.
 cp "achadinhos-v457/detail-share-v479.css" "$OUT/achadinhos-v457/"
 # V4.78: original product-specific editorial images; marketing drafts require review.
