@@ -1,0 +1,10 @@
+/* DELTA Affiliate V4.80 — transparent landing funnel for a user-initiated purchase. */
+.delta-purchase-journey{margin:19px 0;padding:19px 19px 15px;background:rgba(128,128,128,.065);border:1px solid rgba(128,128,128,.18);border-radius:16px}
+.delta-purchase-journey h2{font-size:1.05rem;line-height:1.35;letter-spacing:0;margin:0 0 14px}
+.delta-purchase-journey ol{counter-reset:delta-step;display:grid;gap:13px;list-style:none;padding:0;margin:0}
+.delta-purchase-journey li{padding-left:44px;position:relative;min-width:0}
+.delta-purchase-journey li:before{counter-increment:delta-step;content:counter(delta-step);position:absolute;left:0;top:0;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid currentColor;font-size:.82rem;font-weight:700;opacity:.78}
+.delta-purchase-journey li strong{display:block;font-size:.91rem;font-weight:750}
+.delta-purchase-journey li p{font-size:.86rem;line-height:1.5;margin:4px 0 0;color:inherit;opacity:.84}
+.delta-purchase-clarification{margin:16px 0 0;padding-top:12px;border-top:1px solid rgba(128,128,128,.23);font-size:.82rem;line-height:1.55;opacity:.86}
+@media(max-width:500px){.delta-purchase-journey{padding:15px 13px}.delta-purchase-journey li{padding-left:40px}}

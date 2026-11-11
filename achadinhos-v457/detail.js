@@ -54,6 +54,25 @@ function shareBox(p) {
   box.append(button,message,fallback);
   return box;
 }
+function purchaseJourney() {
+  const sec=text("section","delta-purchase-journey");
+  sec.setAttribute("aria-label","Como funciona a compra");
+  sec.append(text("h2","","Como funciona sua compra"));
+  const steps=document.createElement("ol");
+  const content=[
+    ["Compare na DELTA","Consulte o modelo, as informações e os cuidados de compra nesta página."],
+    ["Escolha abrir o anúncio","Só ao clicar voluntariamente no botão de compra você vai ao anúncio do Mercado Livre."],
+    ["Finalize no marketplace","Confira vendedor, preço, estoque, frete, prazo e devolução no Mercado Livre antes de pagar."]
+  ];
+  for(const [title,desc] of content){
+    const li=document.createElement("li");
+    li.append(text("strong","",title),text("p","",desc));
+    steps.append(li);
+  }
+  sec.append(steps);
+  sec.append(text("p","delta-purchase-clarification","A DELTA apresenta recomendações e links de afiliado. Não recebe pagamentos neste site e não é a vendedora do produto. Podemos receber comissão por compras elegíveis."));
+  return sec;
+}
 function renderProduct(p){
   root.replaceChildren();
   document.title=p.title+" | "+(config.brand||"Achadinhos da Lívia");
@@ -87,7 +106,7 @@ function renderProduct(p){
   for(const item of [...criteria,"Confira preço, vendedor, avaliações, frete e devolução no anúncio original"])
     list.append(text("li","",item));
   checks.append(list);
-  copy.append(box,buy,shareBox(p),note,checks);layout.append(art,copy);
+  copy.append(box,buy,shareBox(p),note,purchaseJourney(),checks);layout.append(art,copy);
   root.append(back,layout);
 }
 function renderRelated(items,main){

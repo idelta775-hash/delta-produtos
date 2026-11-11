@@ -81,6 +81,8 @@ done
 # V4.75: original owned educational media for review/social draft use only.
 mkdir -p "$OUT/achadinhos-v457/owned-social-v475"
 cp achadinhos-v457/owned-social-v475/*.jpg "$OUT/achadinhos-v457/owned-social-v475/"
+# V4.80: transparent three-step purchase explainer; no automated redirects.
+cp "achadinhos-v457/purchase-trust-v480.css" "$OUT/achadinhos-v457/"
 # V4.79: user-initiated product sharing on both presenter detail pages.
 cp "achadinhos-v457/detail-share-v479.css" "$OUT/achadinhos-v457/"
 # V4.78: original product-specific editorial images; marketing drafts require review.
