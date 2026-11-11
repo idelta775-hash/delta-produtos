@@ -1,0 +1,13 @@
+/* DELTA Affiliate V4.88 | voluntary WhatsApp group opt-in; no script or tracking */
+.delta-community-v488{margin:22px auto 10px;position:relative;z-index:1}
+.delta-community-v488 .delta-community-panel{display:flex;gap:24px;align-items:center;justify-content:space-between;border:1px solid #ded9f0;border-radius:18px;padding:22px 26px;background:linear-gradient(115deg,#f8f4ff 0%,#edf8f6 100%);box-shadow:0 8px 24px rgba(28,33,60,.06)}
+.delta-community-v488 .delta-community-content{flex:1;min-width:0}
+.delta-community-v488 .delta-community-eyebrow{font-size:.75rem;line-height:1.4;font-weight:800;letter-spacing:.085em;text-transform:uppercase;color:#604ab0;margin:0 0 7px}
+.delta-community-v488 h2{font-size:clamp(1.28rem,2.3vw,1.7rem);line-height:1.22;letter-spacing:-.025em;color:#20243c;margin:0 0 7px}
+.delta-community-v488 .delta-community-desc{font-size:.94rem;line-height:1.5;color:#37405b;margin:0 0 8px}
+.delta-community-v488 .delta-community-privacy{font-size:.79rem;line-height:1.5;color:#575d74;margin:0}
+.delta-community-v488 .delta-community-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:220px;max-width:100%;padding:13px 18px;border-radius:12px;background:#166f53;color:#fff;text-align:center;font-weight:750;text-decoration:none;box-shadow:0 5px 15px rgba(22,111,83,.16);transition:background .15s ease}
+.delta-community-v488 .delta-community-button:hover{background:#11533f}
+.delta-community-v488 .delta-community-button:focus-visible{outline:3px solid #684ac4;outline-offset:3px}
+@media(max-width:730px){.delta-community-v488{margin:14px auto 6px}.delta-community-v488 .delta-community-panel{flex-direction:column;align-items:stretch;gap:16px;padding:19px 16px;border-radius:15px}.delta-community-v488 .delta-community-button{width:100%}}
+@media(prefers-reduced-motion:reduce){.delta-community-v488 .delta-community-button{transition:none}}

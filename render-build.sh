@@ -88,6 +88,8 @@ cp "achadinhos-v457/detail-share-v479.css" "$OUT/achadinhos-v457/"
 # V4.78: original product-specific editorial images; marketing drafts require review.
 mkdir -p "$OUT/achadinhos-v457/product-spotlights-v478"
 cp achadinhos-v457/product-spotlights-v478/*.jpg "$OUT/achadinhos-v457/product-spotlights-v478/"
+# V4.88: original, no-script, voluntarily opened WhatsApp group invitation.
+cp "achadinhos-v457/community-v488.css" "$OUT/achadinhos-v457/"
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.
 for name in "$OUT"/*.html "$OUT"/sitemap.xml "$OUT"/robots.txt; do
   sed "s|${PUBLIC_BASE}|${TARGET_BASE}|g" "$name" > "$name.new"
