@@ -98,6 +98,9 @@ mkdir -p "$OUT/achadinhos-v457/product-spotlights-v478"
 cp achadinhos-v457/product-spotlights-v478/*.jpg "$OUT/achadinhos-v457/product-spotlights-v478/"
 # V4.88: original, no-script, voluntarily opened WhatsApp group invitation.
 cp "achadinhos-v457/community-v488.css" "$OUT/achadinhos-v457/"
+# V5.00: visitor-initiated share only, no scraping and no automatic WhatsApp messages.
+cp "achadinhos-v457/share-optin-v500.js" "$OUT/achadinhos-v457/"
+cp "achadinhos-v457/share-optin-v500.css" "$OUT/achadinhos-v457/"
 # V4.99: specific editorial share URLs with SKU metadata. No prices or fake product photos.
 for f in share-v499/*.html; do cp "$f" "$OUT/$(basename "$f")"; done
 # Rewrite canonical, OpenGraph, sitemap and robots absolute URL to this site's real Render hostname.

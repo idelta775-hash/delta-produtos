@@ -1,0 +1,10 @@
+/* V5.00 opt-in organic referrals: no automatic sharing or tracking. */
+.delta-community-v488 .delta-community-actions-v500{display:flex;flex:0 0 236px;min-width:0;flex-direction:column;gap:10px;align-items:stretch}
+.delta-community-v488 .delta-community-actions-v500 .delta-community-button{min-width:0;width:100%}
+.delta-community-v488 .delta-community-share-v500{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 13px;border:2px solid #684ac4;border-radius:12px;font-size:.93rem;font-weight:750;color:#4d388c;text-decoration:none;background:#fff;text-align:center}
+.delta-community-v488 .delta-community-share-v500:hover{background:#f0eafa}
+.delta-community-v488 .delta-community-share-v500:focus-visible{outline:3px solid #684ac4;outline-offset:3px}
+.delta-community-v488 .delta-share-note-v500{font-size:.75rem;line-height:1.42;color:#51566c;margin:0;text-align:center}
+.delta-community-v488 .delta-share-status-v500{display:block;min-height:0;font-size:.75rem;line-height:1.35;color:#33435e}
+@media(max-width:730px){.delta-community-v488 .delta-community-actions-v500{flex:1 1 auto;width:100%}.delta-community-v488 .delta-community-share-v500{width:100%}}
+@media(prefers-reduced-motion:reduce){.delta-community-v488 .delta-community-share-v500{transition:none}}
