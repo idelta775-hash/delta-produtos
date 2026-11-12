@@ -2,7 +2,7 @@
 "use strict";
 const config=window.DELTA_STORE_CONFIG||{};
 const cat=window.DeltaCatalog;
-const id=new URLSearchParams(location.search).get("id");
+const id=new URLSearchParams(location.search).get("id")||document.querySelector('meta[name="delta-product-id"]')?.content;
 const root=document.querySelector("#productDetail");
 const related=document.querySelector("#relatedGrid");
 const text=(tag,cls,value)=>{const e=document.createElement(tag);if(cls)e.className=cls;e.textContent=String(value||"");return e};
@@ -21,8 +21,9 @@ function shareBox(p) {
   const fallback=text("input","delta-share-fallback");
   fallback.type="text";fallback.readOnly=true;fallback.hidden=true;
   fallback.setAttribute("aria-label","Link para copiar manualmente");
-  const url=new URL(config.detailPageUrl||"./produto.html",location.href);
-  url.search="";url.hash="";url.searchParams.set("id",p.id);
+  const staticId=document.querySelector('meta[name="delta-product-id"]')?.content;
+  const url=new URL(staticId===p.id?location.pathname:(config.detailPageUrl||"./produto.html"),location.href);
+  url.search="";url.hash="";if(staticId!==p.id)url.searchParams.set("id",p.id);
   const shareUrl=url.href;
   button.addEventListener("click",async()=>{
     const data={
