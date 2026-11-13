@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'">
+<meta name="description" content="Auditoria privada de arquivos CSV: qualidade, duplicidades, inconsistências e diagnóstico exportável.">
+<title>DELTA Insight Studio · Auditor de Dados</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="identity"><span class="logo">∆</span><span><b>DELTA</b><small>INSIGHT STUDIO</small></span></div>
+  <div class="side-group"><span class="side-title">PLATAFORMA</span>
+    <a href="#inicio" class="selected">◈ &nbsp; Visão geral</a>
+    <a href="#auditoria">◎ &nbsp; Auditoria</a>
+    <a href="#amostra">▤ &nbsp; Amostra dos dados</a>
+    <a href="#comercial">◇ &nbsp; Soluções sob encomenda</a>
+  </div>
+  <div class="side-footer"><span class="led"></span><b>100% LOCAL</b><small>O arquivo não sai do navegador.</small></div>
+</aside>
+<main class="main" id="inicio">
+  <div class="topbar"><div class="overline">INTELIGÊNCIA DE DADOS <span> / </span> DEMONSTRAÇÃO V0.1</div><div class="status"><span class="led"></span> Sem conexão externa</div></div>
+  <section class="hero">
+   <div class="kicker">SIMPLES DE USAR. FÁCIL DE CONFERIR.</div>
+   <h1>Transforme planilhas em <em>decisões mais claras.</em></h1>
+   <p>Audite dados, encontre duplicidades, campos vazios e valores incomuns. Receba um diagnóstico verificável em segundos — sem enviar dados a um servidor.</p>
+   <div class="actions">
+    <label for="file" class="btn primary" role="button">Importar meu CSV <span>↗</span></label>
+    <input id="file" type="file" accept=".csv,text/csv,text/plain" aria-label="Importar arquivo CSV">
+    <button id="demo" class="btn outline" type="button">Ver demonstração</button>
+   </div>
+   <div class="microcopy">CSV de até 2 MB • máximo de 10.000 linhas • análise executada neste dispositivo</div>
+   <div class="hero-decoration"><div class="ring ring1"></div><div class="ring ring2"></div><div class="inset">DATA<br><span>↗</span><br>PROOF</div></div>
+  </section>
+  <div class="sourcebar">
+    <div><span class="label">ORIGEM</span> <strong id="filename">Nenhum arquivo carregado</strong></div>
+    <div><span class="label">REGISTRO</span> <strong id="timestamp">—</strong></div>
+    <div id="privacy-label" class="private"><span class="led"></span> Privado</div>
+  </div>
+  <section id="auditoria" class="panel">
+    <div class="section-head"><div><div class="overline">EVIDÊNCIAS AUTOMÁTICAS</div><h2>Diagnóstico de qualidade</h2></div><span id="sample-badge" class="smalltag">SEM DADOS</span></div>
+    <div class="metrics">
+      <div class="metric"><small>LINHAS ANALISADAS</small><strong id="m-rows">—</strong><span>Até 10 mil registros</span></div>
+      <div class="metric"><small>CÉLULAS VAZIAS</small><strong id="m-empty">—</strong><span>Campos sem conteúdo</span></div>
+      <div class="metric"><small>LINHAS DUPLICADAS</small><strong id="m-duplicates">—</strong><span>Correspondência exata normalizada</span></div>
+      <div class="metric"><small>VALORES INCOMUNS</small><strong id="m-outliers">—</strong><span>Detecção estatística exploratória</span></div>
+    </div>
+    <div class="cols">
+     <section class="inner">
+       <div class="inner-header"><h3>Qualidade dos dados</h3><span id="quality" class="quality">—</span></div>
+       <div class="bar-track"><div id="quality-bar" class="bar-fill"></div></div>
+       <p id="quality-note">Importe um arquivo ou abra a demonstração para começar.</p>
+       <div class="fields"><label>Coluna numérica<select id="numeric" disabled><option value="">Não disponível</option></select></label>
+       <label>Categoria para agrupamento<select id="category" disabled><option value="">Não disponível</option></select></label></div>
+       <div class="hash-title">SHA-256 do arquivo original</div><div id="digest" class="digest">—</div>
+       <small>O hash identifica os bytes do arquivo. Não comprova, sozinho, autenticidade ou veracidade.</small>
+     </section>
+     <section class="inner">
+       <div class="inner-header"><h3>Distribuição por categoria</h3><span class="mini-info">NÚMERO DE LINHAS</span></div>
+       <div id="bars" class="chartlist"><p class="empty-state">Nenhuma categoria disponível.</p></div>
+     </section>
+    </div>
+    <section class="inner finding-section">
+      <div class="inner-header"><h3>Ocorrências que merecem revisão</h3><span id="findings-count" class="mini-info">0 ocorrências</span></div>
+      <div class="tablewrap"><table><thead><tr><th>Linha</th><th>Tipo</th><th>Evidência</th></tr></thead><tbody id="findings"><tr><td colspan="3">Carregue uma planilha para analisar.</td></tr></tbody></table></div>
+      <small>Um valor incomum não significa fraude ou erro. É apenas um ponto para conferência humana.</small>
+    </section>
+    <div class="exportbar"><div><strong>Relatório reproduzível</strong><p>Metodologia explícita, totais, alertas e hash. Dados completos não entram no arquivo exportado.</p></div>
+      <div class="reportbuttons"><button id="export-html" type="button" class="btn primary" disabled>Baixar relatório legível ↗</button><button id="export" type="button" class="btn outline" disabled>Diagnóstico JSON</button></div></div>
+  </section>
+  <section class="panel" id="amostra"><div class="section-head"><div><div class="overline">TRANSPARÊNCIA</div><h2>Prévia dos registros</h2></div><span class="smalltag">PRIMEIRAS 6 LINHAS</span></div>
+    <div class="tablewrap"><table id="preview"><thead><tr><th>—</th></tr></thead><tbody><tr><td>Nenhum dado carregado.</td></tr></tbody></table></div>
+    <p class="privacy-note">Arquivos não são enviados a nenhum endpoint. Fechar esta página encerra a sessão e descarta os dados carregados.</p></section>
+  <section class="offer" id="comercial">
+    <div class="overline">PARA QUEM PRECISA DE MAIS</div><h2>Seu negócio merece dados organizados.</h2>
+    <p>Quer integrar planilhas de vendas, estoque, ordens, clientes ou relatórios operacionais em um painel privado? Desenvolvemos soluções personalizadas após entender sua necessidade. Esta é uma demonstração, não um checkout.</p>
+    <button type="button" id="copy-brief" class="btn outline light">Copiar pedido de orçamento ↗</button>
+    <a class="btn outline light offer-services-link" href="index.html">Conhecer os serviços DELTA ↗</a>
+    <div id="copy-status" aria-live="polite"></div>
+  </section>
+  <footer>© DELTA Insight Studio · Protótipo de demonstração · Sem relatórios financeiros personalizados ou recomendações de investimento · Nenhuma venda realizada nesta página</footer>
+</main></div>
+<script src="app.js" defer></script></body></html>
