@@ -132,6 +132,21 @@ function renderProduct(p){
   for(const item of [...criteria,"Confira preço, vendedor, avaliações, frete e devolução no anúncio original"])
     list.append(text("li","",item));
   checks.append(list);
+  // A brand-owned, unchanged video is linked externally for reference, never copied.
+  // Only attach it when the active exact SKU and affiliate URL both match the verified catalog.
+  if(p.id==="0df53a0fc561e9" &&
+     p.title==="Aspirador vertical WAP High Speed Plus 1350 W" &&
+     p.affiliate_url==="https://meli.la/2MDASom") {
+    const demo=text("section","delta-official-demo-reference");
+    demo.setAttribute("aria-label","Demonstração pública do fabricante");
+    demo.append(text("h2","","Veja o produto real em uso"));
+    demo.append(text("p","", "A WAP publicou uma apresentação do High Speed Plus com montagem, acessórios e modos de utilização. É material do fabricante, não um teste realizado pela DELTA."));
+    const watch=link("https://www.youtube.com/watch?v=UbMfC1LfWak","Assistir ao vídeo oficial da WAP ↗","delta-demo-watch");
+    watch.target="_blank";watch.rel="noopener noreferrer";
+    demo.append(watch);
+    demo.append(text("p","", "O vídeo abre no canal original. Antes de comprar, confira a voltagem, o modelo e as condições do anúncio do vendedor."));
+    copy.append(demo);
+  }
   copy.append(box,buy,shareBox(p),note,purchaseJourney(),checks);layout.append(art,copy);
   root.append(back,layout);
   mountMobilePurchaseShortcut(p,buy);
